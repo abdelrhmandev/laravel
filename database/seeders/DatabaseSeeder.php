@@ -14,8 +14,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-            CountrySeeder::class
-            // CitySeeder::class
+            CountrySeeder::class,
+            CitySeeder::class
             // AreaSeeder::class,
             // DistrictSeeder::class,
             // SlideSeeder::class,
