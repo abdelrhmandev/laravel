@@ -12,7 +12,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-        $this->call(CountrySeeder::class);    
+        $this->call([
+            CountrySeeder::class,
+            CitySeeder::class,
+            AreaSeeder::class,
+            DistrictSeeder::class,
+            SlideSeeder::class,
+            RecipeCategorySeeder::class,
+            RecipeSeeder::class,
+        ]); 
     }
 }

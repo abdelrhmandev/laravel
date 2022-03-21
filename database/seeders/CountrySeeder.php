@@ -260,6 +260,7 @@ class CountrySeeder extends Seeder
         ['title_en'=>'Zambia','title_ar'=>'زامبيا','code'=>'ZM'],
         ['title_en'=>'Zimbabwe','title_ar'=>'زيمبابوي','code'=>'ZW']        
        ];
-       DB::table('countries')->insert($items);        
+       DB::table('countries')->insert($items);   
+ 
     }
 }

@@ -17,8 +17,8 @@ class CreateCountriesTable extends Migration
             $table->id();
             $table->string('title_en');
             $table->string('title_ar');
-            $table->string('code')->unique();
-            $table->string('flag')->nullable()->default('NULL');
+            $table->string('code',20)->unique();
+            // $table->string('flag',20)->nullable()->default('NULL');
         });
     }
 
