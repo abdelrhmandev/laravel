@@ -24,10 +24,11 @@ class CreateSlidesTable extends Migration {
 		Schema::create('slide_translations', function (Blueprint $table) {            
 			$table->id();
 			$table->string('title');
-			$table->longText('description')->nullable();
-            $table->string('lang')->index();
+			$table->longText('description')->nullable();			
+			$table->string('lang')->index();			
             $table->unsignedBigInteger('slide_id');
-            $table->foreign('slide_id')->references('id')->on('slides')->onDelete('cascade');       
+			$table->unique(['slide_id','lang']);  
+            $table->foreign('slide_id')->references('id')->on('slides')->onDelete('cascade');        
 		});	
 	}
 

@@ -23,9 +23,10 @@ class CreateAreasTable extends Migration {
 			$table->id();
 			$table->string('title');
             $table->string('slug')->unique();
-            $table->string('lang')->index();
-            $table->unsignedBigInteger('area_id');
-            $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');       
+			$table->string('lang')->index();			
+            $table->unsignedBigInteger('district_id');
+			$table->unique(['district_id','lang']);  
+            $table->foreign('district_id')->references('id')->on('districts')->onDelete('cascade');      
 		});	
 	}
 

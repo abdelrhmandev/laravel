@@ -23,9 +23,10 @@ class CreateDistrictsTable extends Migration {
 			$table->id();
 			$table->string('title');
             $table->string('slug')->unique();
-            $table->string('lang')->index();
+			$table->string('lang')->index();			
             $table->unsignedBigInteger('district_id');
-            $table->foreign('district_id')->references('id')->on('districts')->onDelete('cascade');       
+			$table->unique(['district_id','lang']);  
+            $table->foreign('district_id')->references('id')->on('districts')->onDelete('cascade');   
 		});	
 	}
 
