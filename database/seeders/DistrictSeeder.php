@@ -35,7 +35,7 @@ class DistrictSeeder extends Seeder
 
 
 
-            ['title'=>'Abbas al-Aqqad','slug'=>'Abbas-al-Aqqad','lang'=>'en','district_id'=>'2'],
+            ['title'=>'Abbas al-Aqqad','slug'=>'abbas-al-aqqad','lang'=>'en','district_id'=>'2'],
             ['title'=>'عباس العقاد','slug'=>'عباس-العقاد','lang'=>'ar','district_id'=>'2'],
 
             ['title'=>'Makram Ebeid','slug'=>'makram-ebeid','lang'=>'en','district_id'=>'3'],
@@ -43,7 +43,7 @@ class DistrictSeeder extends Seeder
 
 
             ['title'=>'Mostafa El-Nahas','slug'=>'mostafa-el-nahas','lang'=>'en','district_id'=>'4'],
-            ['title'=>'مصطفي النحاس','slug'=>'مصطفي النحاس','lang'=>'ar','district_id'=>'4'],      
+            ['title'=>'مصطفي النحاس','slug'=>'مصطفي-النحاس','lang'=>'ar','district_id'=>'4'],      
 
 
             ['title'=>'El Horreya Mall','slug'=>'el-horreya-mall','lang'=>'en','district_id'=>'5'],

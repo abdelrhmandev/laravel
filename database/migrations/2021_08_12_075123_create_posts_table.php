@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('post_category_id')->index()->nullable();
             $table->foreign('post_category_id')->references('id')->on('post_categories')->onDelete('cascade');
+            $table->enum('published', ['0','1'])->default(1);
             $table->boolean('featured')->default(0);
             $table->string('image',150)->nullable();
 			$table->softDeletes(); //////Option 
@@ -25,15 +26,14 @@ class CreatePostsTable extends Migration
 
        });
         Schema::create('post_translations', function (Blueprint $table) {                 
-            $table->id();
-            $table->bigInteger('post_id')->unsigned();       
+            $table->id();  
             $table->string('title');
             $table->string('slug')->unique();
             $table->longText('description')->nullable();
 			$table->string('lang')->index();			
             $table->unsignedBigInteger('post_id');
 			$table->unique(['post_id','lang']);  
-            $table->foreign('post_id')->references('id')->on('post_categories')->onDelete('cascade');               
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');               
         });	
     }
 

@@ -17,9 +17,11 @@ class DatabaseSeeder extends Seeder
             CitySeeder::class,
             AreaSeeder::class,
             DistrictSeeder::class,
-            SlideSeeder::class,
-            RecipeCategorySeeder::class,
-            RecipeSeeder::class,
+            SlideSeeder::class,   
+            TagSeeder::class,
+            PostSeeder::class,
+            // RecipeCategorySeeder::class,
+            // RecipeSeeder::class,
         ]); 
     }
 }
