@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
             SlideSeeder::class,   
             TagSeeder::class,
             PostSeeder::class,
-            // RecipeCategorySeeder::class,
-            // RecipeSeeder::class,
+            RecipeCategorySeeder::class,
+            RecipeSeeder::class,
         ]); 
     }
 }

@@ -15,8 +15,10 @@
 Route::resource('cities','CityController'); // Cities
 Route::resource('areas','AreaController'); // Areas
 Route::resource('districts','DistrictController'); // Districts
+Route::resource('recipes','RecipeController'); // Recipe
+Route::resource('posts','PostController'); // Post
 
-// Route::resource('posts','PostController'); // Post
+Route::resource('PostCategories','PostCategoryController'); // Post Categories
 
  
 // Menu Management
