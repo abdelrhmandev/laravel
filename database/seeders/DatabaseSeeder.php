@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             PostSeeder::class,
             RecipeCategorySeeder::class,
             RecipeSeeder::class,
+            FaqSeeder::class,
         ]); 
     }
 }

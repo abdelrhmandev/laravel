@@ -15,25 +15,25 @@ class CreateRecipesTable extends Migration
     {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('recipe_category_id')->index()->nullable();
-            $table->foreign('recipe_category_id')->references('id')->on('recipe_categories')->onDelete('cascade');
-            $table->enum('published', ['0','1'])->default(1);
-            $table->boolean('featured')->default(0);
-            $table->string('image',150)->nullable();
-			$table->softDeletes(); //////Option 
+            $table->unsignedBigInteger('recipe_category_id');
+			$table->string('image',150)->nullable();
+			$table->enum('published', ['0','1'])->default(1);
+            $table->enum('featured', ['0','1'])->default(1);
+            $table->foreign('recipe_category_id')->references('id')->on('recipe_categories')->onDelete('cascade');   
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
-       });
+            
+        });
         Schema::create('recipe_translations', function (Blueprint $table) {                 
-            $table->id();  
+            $table->id();               
             $table->string('title');
             $table->string('slug')->unique();
             $table->longText('description')->nullable();
 			$table->string('lang')->index();			
             $table->unsignedBigInteger('recipe_id');
 			$table->unique(['recipe_id','lang']);  
-            $table->foreign('recipe_id')->references('id')->on('recipes')->onDelete('cascade');               
+            $table->foreign('recipe_id')->references('id')->on('recipes')->onDelete('cascade');   
         });	
     }
 
@@ -45,6 +45,6 @@ class CreateRecipesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('recipes');
-        Schema::dropIfExists('recipe_translations');
+        Schema::dropIfExists('recipes_translations');
     }
 }
