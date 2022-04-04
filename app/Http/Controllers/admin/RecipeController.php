@@ -6,25 +6,25 @@ use LaravelLocalization;
 use App\Models\Area;
 use App\Models\City;
 use App\Models\Country;
-use App\Models\District;
+use App\Models\Recipe;
 
 
 class RecipeController extends Controller
 {
-    public function index(){
-        if (view()->exists('admin.districts.index')) {
-            $districts = District::with(['district_info','area.area_info','area.city.city_info','area.city.country'])->get(); 
-            return view('admin.districts.index',['districts'=>$districts]);
+    public function index(){ 
+        if (view()->exists('admin.recipes.index')) {
+            $recipes = Recipe::with(['district_info','area.area_info','area.city.city_info','area.city.country'])->get(); 
+            return view('admin.recipes.index',['recipes'=>$recipes]);
         }
     }
         public function create(){
-        if (view()->exists('admin.districts.create')) {
-            return view('admin.districts.create');
+        if (view()->exists('admin.recipes.create')) {
+            return view('admin.recipes.create');
         }
     }
      public function edit(){
-        if (view()->exists('admin.districts.index')) {
-            return view('admin.districts.edit');
+        if (view()->exists('admin.recipes.index')) {
+            return view('admin.recipes.edit');
         }
     }
 
