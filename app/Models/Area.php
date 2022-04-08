@@ -10,11 +10,15 @@ class Area extends Model
         return $this->hasMany(AreaTranslation::class);
     }
     # Translation method
-    public function area_info(){
+    public function area(){
         return $this->hasOne(AreaTranslation::class)->where('lang',app()->getLocale());
     }
        public function city() {
 		return $this->belongsTo(City::class);
+	}
+
+    public function district() {
+		return $this->hasMany(District::class);
 	}
 
 }

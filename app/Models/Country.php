@@ -17,12 +17,4 @@ class Country extends Model
 	public function city() {
 		return $this->hasMany(City::class); 
 	}
-
-    // public function country_translation() {
-	// 	return $this->hasMany(Country_translation::class); 
-	// }
-	// public function title() {
-	// 	return $this->hasOne(Country::class)->pluck('title_en'); 
-	// }
-
 }

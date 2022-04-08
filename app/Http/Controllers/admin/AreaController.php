@@ -4,13 +4,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use LaravelLocalization;
 use App\Models\Area;
-use App\Models\City;
-use App\Models\Country;
 class AreaController extends Controller
 {
     public function index(){
         if (view()->exists('admin.areas.index')) {
-            $areas = Area::with(['area_info','city.city_info','city.country'])->get(); 
+            $areas = Area::with(['area','city','district','city.country'])->get(); 
             return view('admin.areas.index',['areas'=>$areas]);
         }
     }

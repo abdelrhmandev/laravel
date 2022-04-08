@@ -11,13 +11,15 @@ class City extends Model
     public function city_translation(){
         return $this->hasMany(CityTranslation::class);
     }
-
+    public function area(){
+        return $this->hasMany(Area::class);
+    }
 	public function country() {
 		return $this->belongsTo(Country::class);
 	}
  
     # Translation method
-    public function city_info(){
+    public function city(){
         return $this->hasOne(CityTranslation::class)->where('lang',app()->getLocale());
     }
  

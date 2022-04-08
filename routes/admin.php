@@ -11,7 +11,7 @@
 //     return view('admin.forms.add');
 // });
 
-
+Route::resource('countries','CountryController',['only'=>['index']]); // Country
 Route::resource('cities','CityController'); // Cities
 Route::resource('areas','AreaController'); // Areas
 Route::resource('districts','DistrictController'); // Districts

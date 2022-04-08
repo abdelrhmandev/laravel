@@ -1,9 +1,9 @@
-<table cellpading="2">
+<table cellpading="10">
     <thead>
       <tr>
         <td>#</td>
         <td>Title</td>
-        <td>Slug</td>
+        <td>Areas Counter</td>
         <td>Country</td>
       </tr>
     </thead>
@@ -11,8 +11,8 @@
     @forelse ($cities as $city)
     <tr>
         <td>{{  $city->id }}</td>
-        <td>{{  $city->city_info->title }} </td>
-        <td>{{  $city->city_info->slug }} </td>
+        <td>{{  $city->city->title }} </td>
+        <td>{{  $city->area->count() }} </td>
         <td>{{  $city->country->{'title_'.app()->getLocale() } }}</td>
     </tr>
     @empty

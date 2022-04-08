@@ -8,7 +8,7 @@ class CityController extends Controller
 {
     public function index(){
         if (view()->exists('admin.cities.index')) {
-            $cities = City::with(['city_info','country'])->get();
+            $cities = City::with(['city','area','country'])->get();
             return view('admin.cities.index',['cities'=>$cities]);
         }
     }

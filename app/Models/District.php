@@ -10,7 +10,7 @@ class District extends Model
         return $this->hasMany(DistrictTranslation::class);
     }
     # Translation method
-    public function district_info(){
+    public function district(){
         return $this->hasOne(DistrictTranslation::class)->where('lang',app()->getLocale());
     }
        public function area() {
