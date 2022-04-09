@@ -33,6 +33,7 @@ class AreaSeeder extends Seeder
        DB::table('areas')->insert($items);      
 
        $translated_items = [
+           // cairo
             ['title'=>'Zamalek','slug'=>'zamalek','lang'=>'en','area_id'=>'1'],
             ['title'=>'الزمالك','slug'=>'الزمالك','lang'=>'ar','area_id'=>'1'],
 
@@ -48,14 +49,14 @@ class AreaSeeder extends Seeder
             ['title'=>'New Cairo','slug'=>'New Cairo','lang'=>'en','area_id'=>'5'],
             ['title'=>'القاهرة الجديده','slug'=>'القاهرة الجديده','lang'=>'ar','area_id'=>'5'],
  
-
+            // Alex
             ['title'=>'Borg Al Arab','slug'=>'borg-al-arab','lang'=>'en','area_id'=>'6'],
             ['title'=>'برج العرب','slug'=>'برج العرب','lang'=>'ar','area_id'=>'6'],
 
             ['title'=>'Smoha','slug'=>'smoha','lang'=>'en','area_id'=>'7'],
             ['title'=>'سموحه','slug'=>'سموحه','lang'=>'ar','area_id'=>'7'],
 
-
+            // Giza
             ['title'=>'6th of October City','slug'=>'6th-of-october-city','lang'=>'en','area_id'=>'8'],
             ['title'=>'السادس من أكتوبر','slug'=>'السادس من أكتوبر','lang'=>'ar','area_id'=>'8'],
 
