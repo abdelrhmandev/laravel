@@ -11,14 +11,20 @@
 //     return view('admin.forms.add');
 // });
 
+ 
 Route::resource('countries','CountryController',['only'=>['index']]); // Country
 Route::resource('cities','CityController'); // Cities
 Route::resource('areas','AreaController'); // Areas
 Route::resource('districts','DistrictController'); // Districts
+
 Route::resource('recipes','RecipeController'); // Recipe
+Route::resource('recipe-category','RecipeCategoryController'); // Recipe Categories
+
 Route::resource('posts','PostController'); // Post
 
-Route::resource('PostCategories','PostCategoryController'); // Post Categories
+Route::resource('/post-tag','PostTagController'); // Post Tags
+
+Route::resource('post-category','PostCategoryController'); // Post Categories
 
  
 // Menu Management
