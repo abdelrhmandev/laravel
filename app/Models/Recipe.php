@@ -3,6 +3,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 class Recipe extends Model
 {
+    protected $table = 'recipes';
+
     protected $fillable = [
 		'recipe_category_id',
 	];
@@ -15,7 +17,7 @@ class Recipe extends Model
     }
 
     public function category(){
-        return $this->belongsTo(RecipeCategory::class,'id','recipe_category_id');
+        return $this->belongsTo(RecipeCategory::class,'recipe_category_id','id');
     }
 
 }

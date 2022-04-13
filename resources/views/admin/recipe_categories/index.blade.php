@@ -12,7 +12,7 @@
       <tr>
         <td>{{ $category->id }}</td>
         <td>{{ $category->category->title }}</td> 
-        <td>{{ $category->recipe->count() }}</td>
+        <td>{{ $category->recipes->count() }}</td>
 
         <td>{{ $category->image }} 
         
