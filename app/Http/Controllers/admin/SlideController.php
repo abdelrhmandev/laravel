@@ -10,7 +10,7 @@ class SlideController extends Controller
 {
     public function index(){ 
         if (view()->exists('admin.slides.index')) {
-            $slides = Recipe::with(['district_info','area.area_info','area.city.city_info','area.city.country'])->get(); 
+            $slides = Slide::with(['slide'])->get(); 
             return view('admin.slides.index',['slides'=>$slides]);
         }
     }

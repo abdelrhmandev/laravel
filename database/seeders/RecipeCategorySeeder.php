@@ -15,11 +15,11 @@ class RecipeCategorySeeder extends Seeder
 
 
        $items = [
-        ['image'=>'uploads/recipe_categories/rc1.jpg','published'=>'1'], 
-        ['image'=>'uploads/recipe_categories/rc2.jpg','published'=>'1'],
-        ['image'=>'uploads/recipe_categories/rc3.jpg','published'=>'0'],
-        ['image'=>'uploads/recipe_categories/rc4.jpg','published'=>'0'],
-        ['image'=>'uploads/recipe_categories/rc5.jpg','published'=>'0'],
+        ['image'=>'uploads/recipe_categories/snack.jpg','published'=>'1'], 
+        ['image'=>'uploads/recipe_categories/soup.jpg','published'=>'1'],
+        ['image'=>'uploads/recipe_categories/chicken.jpg','published'=>'0'],
+        ['image'=>'uploads/recipe_categories/beef.jpg','published'=>'0'],
+        ['image'=>'uploads/recipe_categories/pasta.jpg','published'=>'0'],
  
     ];
        DB::table('recipe_categories')->insert($items);      

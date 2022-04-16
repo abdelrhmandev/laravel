@@ -17,12 +17,23 @@ Route::resource('cities','CityController'); // Cities
 Route::resource('areas','AreaController'); // Areas
 Route::resource('districts','DistrictController'); // Districts
 
-Route::resource('recipes','RecipeController'); // Recipe
+Route::resource('pages','PageController');// Pages
+Route::resource('banners','BannerController');// Bnnner
+Route::resource('users','UserController');// Banner
+
+
+Route::resource('recipes','RecipeController'); // Recipes
 Route::resource('recipe-category','RecipeCategoryController'); // Recipe Categories
 
 Route::resource('posts','PostController'); // Post
 
-Route::resource('/post-tag','PostTagController'); // Post Tags
+Route::resource('tags','TagController'); // Post Tags
+
+Route::resource('post-tag','PostTagController'); // Post Tags
+
+Route::resource('faqs','FaqController'); // Faqs
+
+Route::resource('slides','SlideController'); // Slides
 
 Route::resource('post-category','PostCategoryController'); // Post Categories
 
@@ -36,17 +47,15 @@ Route::resource('post-category','PostCategoryController'); // Post Categories
 // End Of Menu Management
 
 
-// Route::resource('pages','PageController');// Pages
+
 
 ///// Menu Management ////////////
 // $path = rtrim(config('menu.route_path'));
+
 // Route::get('/menus', 'MenuController@index')->name('menus'); 
 // Route::put($path . '/add_menu_item','MenuController@add_menu_item')->name('add_menu_item');
 // Route::post($path . '/hgeneratemenucontrol_override','MenuController@hgeneratemenucontrol_override')->name('hgeneratemenucontrol_override');
 
-
-// Route::resource('banners','BannerController');// Bnnner
-// Route::resource('users','UserController');// Banner
 // Route::get('profile','AdminController@profile')->name('admin-profile'); // Profile
 // Route::post('/profile/{id}','AdminController@profileUpdate')->name('profile-update'); // Profile Update
 // Route::resource('products-categories','ProductCategoryController'); // Product Categories

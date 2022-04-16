@@ -15,9 +15,9 @@ class RecipeSeeder extends Seeder
 
 
        $items = [
-        ['image'=>'uploads/recipes/r1.jpg','recipe_category_id'=>'1','featured'=>'1','published'=>'1'], 
-        ['image'=>'uploads/recipes/r2.jpg','recipe_category_id'=>'2','featured'=>'0','published'=>'1'],
-        ['image'=>'uploads/recipes/r3.jpg','recipe_category_id'=>'3','featured'=>'1','published'=>'0'],
+        ['image'=>'uploads/recipes/farmers_grilled_cheese.jpg','recipe_category_id'=>'1','featured'=>'1','published'=>'1'], 
+        ['image'=>'uploads/recipes/blt_pasta.jpg','recipe_category_id'=>'2','featured'=>'0','published'=>'1'],
+        ['image'=>'uploads/recipes/baked_tilapia_in_lemon_butter_sauce.jpg','recipe_category_id'=>'3','featured'=>'1','published'=>'0'],
  
     ];
        DB::table('recipes')->insert($items);      

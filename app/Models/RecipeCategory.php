@@ -7,6 +7,7 @@ class RecipeCategory extends Model
     protected $table = 'recipe_categories';
 
     
+    
     public function recipe_category_translation(){
         return $this->hasMany(RecipeCategoryTranslation::class);
     }

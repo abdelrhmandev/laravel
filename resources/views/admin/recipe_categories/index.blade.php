@@ -5,6 +5,7 @@
         <th>#</th>
         <th>Title</th>
         <th>Recipe Counter</th>
+        <th>Image</th>
       </tr>
     </thead>
     <tbody>
@@ -14,9 +15,12 @@
         <td>{{ $category->category->title }}</td> 
         <td>{{ $category->recipes->count() }}</td>
 
-        <td>{{ $category->image }} 
-        
-        <img src="{{ url('uploads/recipe_categories/rc1.jpg')}}"/>
+        <td>           
+          @if($category->image)
+            <img src="{{  Storage::url($category->image) }}" width="50" height="50">
+          @else
+            Not Available
+          @endif
         </td>
 
       </tr>
