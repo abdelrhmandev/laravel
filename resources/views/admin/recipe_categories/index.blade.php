@@ -12,7 +12,9 @@
         @forelse ($recipe_categories as $category)        
       <tr>
         <td>{{ $category->id }}</td>
-        <td>{{ $category->category->title }}</td> 
+        <td>{{ $category->category->title }}
+        <pre>{{ $category->category->descrption }}</pre>
+        </td> 
         <td>{{ $category->recipes->count() }}</td>
 
         <td>           

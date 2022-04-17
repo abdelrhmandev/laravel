@@ -4,6 +4,7 @@
       <tr>
         <th>#</th>
         <th>Title</th>
+        <th>Descripton</th>
         <th>Category</th>
       </tr>
     </thead>
@@ -12,7 +13,10 @@
       <tr>
         <td>{{ $recipe->id }}</td>
         <td>{{ $recipe->recipe->title }}</td>         
-        <td>{{ ($recipe->recipe_category->category->title) }}</td> 
+        <td>{{ $recipe->recipe->description }}</td>
+        <td>{{ ($recipe->recipe_category->category->title) }}</td>
+         
+        </td> 
     </tr>
       @empty
       {{  trans('area.no_aras_added') }}
