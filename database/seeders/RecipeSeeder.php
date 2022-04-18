@@ -21,12 +21,30 @@ class RecipeSeeder extends Seeder
 
        $items = [
         ['image'=>'uploads/recipes/farmers_grilled_cheese.jpg','recipe_category_id'=>'1','featured'=>'1','published'=>'1'], 
+        
         ['image'=>'uploads/recipes/blt_pasta.jpg','recipe_category_id'=>'2','featured'=>'0','published'=>'1'],
+        
         ['image'=>'uploads/recipes/baked_tilapia_in_lemon_butter_sauce.jpg','recipe_category_id'=>'3','featured'=>'1','published'=>'0'],
+        
         ['image'=>'uploads/recipes/spicy-beef-taco-2cd04fc.jpg','recipe_category_id'=>'4','featured'=>'1','published'=>'0'],
+        
         ['image'=>'uploads/recipes/healthy-chicken-pasta-bake-8c8fa07.jpg','recipe_category_id'=>'3','featured'=>'1','published'=>'0'],
+        
+        ['image'=>'uploads/recipes/creamy-mushroom-and-spinach-pasta-9b0582e.jpg','recipe_category_id'=>'5','featured'=>'1','published'=>'0'],
 
-        ['image'=>'uploads/recipes/creamy-mushroom-and-spinach-pasta-9b0582e.jpg','recipe_category_id'=>'4','featured'=>'1','published'=>'0'],
+        ['image'=>'uploads/recipes/smoked-brisket-a9a5c4e.jpg','recipe_category_id'=>'4','featured'=>'0','published'=>'0'],
+
+        ['image'=>'uploads/recipes/beef-and-Boston-baked-beans-5678a51.jpg','recipe_category_id'=>'4','featured'=>'0','published'=>'0'],
+
+
+        ['image'=>'uploads/recipes/pasta-alla-norma.jpg','recipe_category_id'=>'5','featured'=>'1','published'=>'0'],
+
+        
+
+        ['image'=>'uploads/recipes/chicken-mushroom-wellington.jpg','recipe_category_id'=>'3','featured'=>'1','published'=>'0'],
+
+        
+
 
     ];
        DB::table('recipes')->insert($items);      
@@ -52,8 +70,31 @@ class RecipeSeeder extends Seeder
         ['title'=>'Creamy mushroom & spinach pasta','slug'=>'creamy-mushroom-spinach-pasta','description'=>'Toss together tagliatelle, mushrooms and spinach in a parmesan and crème fraîche sauce to make a quick and low calorie dinner that takes just 25 minutes','lang'=>'en','recipe_id'=>'6'],
         ['title'=>'معكرونة بالسبانخ والفطر الكريمي','slug'=>'كريمة-فطر-سبانخ-باستا','description'=>'اخلطي التاغلياتيل والفطر والسبانخ معًا في صلصة البارميزان والكريمة الطازجة لإعداد عشاء سريع ومنخفض السعرات الحرارية يستغرق 25 دقيقة فقط','lang'=>'ar','recipe_id'=>'6'],
 
-        
 
+
+        ['title'=>'Smoked brisket','slug'=>'smoked-brisket','description'=>'Fire up the smoker for this flavourful slow-cooked brisket. Serve on a board with charred greens and salsa rossa so everyone can help themselves','lang'=>'en','recipe_id'=>'7'],
+        ['title'=>'بريسكيت مدخن','slug'=>'بريسكيت-مدخن','description'=>'أطلق النار على المدخن من أجل هذا لحم الصدر اللذيذ المطبوخ ببطء. تخدم على لوح به خضار متفحمة وصلصة الروسا حتى يتمكن الجميع من مساعدة أنفسهم','lang'=>'ar','recipe_id'=>'7'],
+
+
+
+
+        ['title'=>'Beef & Boston baked beans','slug'=>'beef-boston-baked-beans','description'=>'Enjoy these Boston baked beans with a jacket potato or crusty bread. Time works its magic on this dish, but there’s very little hands-on work to do','lang'=>'en','recipe_id'=>'8'],
+        ['title'=>'لحم بقر بالفاصوليا المخبوزة','slug'=>'لحم-بقر-بالفاصوليا-المخبوزة','description'=>'استمتع بهذه الفاصوليا المخبوزة في بوسطن مع سترة البطاطس أو الخبز المقرمش. يعمل الوقت بشكل ساحر على هذا الطبق ، ولكن هناك القليل جدًا من العمل العملي الذي يجب القيام به','lang'=>'ar','recipe_id'=>'8'],
+
+
+
+
+        ['title'=>'Pasta alla norma','slug'=>'pasta-alla-norma','description'=>'Try this easy version of an alla norma, which uses roast aubergine instead of fried. It’s then tossed with spaghetti and a rich tomato and basil sauce','lang'=>'en','recipe_id'=>'9'],
+        ['title'=>'باستا ألا نورما','slug'=>'باستا-ألا-نورما','description'=>'جرب هذه النسخة السهلة من آلا نورما ، والتي تستخدم الباذنجان المشوي بدلاً من المقلي. ثم يتم تقليبها مع السباغيتي وصلصة الطماطم الغنية والريحان','lang'=>'ar','recipe_id'=>'9'],
+
+
+
+        ['title'=>'Chicken & mushroom wellington','slug'=>'hicken-mushroom-wellington','description'=>'Make a celebration supper for two with this chicken and mushroom wellington. Cut into golden pastry to find a creamy, garlicky inside – perfection','lang'=>'en','recipe_id'=>'10'],
+        ['title'=>'دجاج و مشروم ولينغتون','slug'=>'دجاج و مشروم ولينغتون','description'=>'اصنع عشاء احتفالي لشخصين مع هذا الدجاج والفطر ويلينغتون. قطعيها إلى عجينة ذهبية لتحصلي على قوام كريمي بالثوم من الداخل - الكمال','lang'=>'ar','recipe_id'=>'10'],
+
+
+        
+        
 
        ];
        DB::table('recipe_translations')->insert($translated_items);  
