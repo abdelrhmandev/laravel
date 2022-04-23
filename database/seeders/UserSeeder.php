@@ -15,21 +15,21 @@ class UserSeeder extends Seeder
 
         $insertions                  = [
             [
-                'username'         => 'hardik',
+                'username'         => 'admin',
                 'password'         => bcrypt('12345678'),
-                'email'            =>  'Hardik@domain.com',
-                'name'             => 'Hardik Mavrek'
+                'email'            => 'admin@domain.com',
+                'name'             => 'Admin Life'
             ],
             [
                 'username'         => 'johndoe',
                 'password'         => bcrypt('12345678'),
-                'email'            =>  'johndoe@domain.com',
+                'email'            => 'johndoe@domain.com',
                 'name'             => 'John Doe'
             ],
             [
                 'username'         => 'vigo',
                 'password'         => bcrypt('12345678'),
-                'email'            =>  'vigo@domain.com',
+                'email'            => 'vigo@domain.com',
                 'name'             => 'vigo mavy'
             ],
             [

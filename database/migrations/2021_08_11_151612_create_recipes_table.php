@@ -45,6 +45,6 @@ class CreateRecipesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('recipes');
-        Schema::dropIfExists('recipes_translations');
+        Schema::dropIfExists('recipe_translations');
     }
 }

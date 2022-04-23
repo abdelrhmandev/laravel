@@ -21,8 +21,11 @@ class DatabaseSeeder extends Seeder
             SlideSeeder::class,   
             TagSeeder::class,
             PostSeeder::class,
+            PostCategorySeeder::class,
             RecipeCategorySeeder::class,
             RecipeSeeder::class,
+            RecipeReviewSeeder::class,
+            RecipeTagSeeder::class,
             RecipelikeSeeder::class,
             FaqSeeder::class,
         ]); 

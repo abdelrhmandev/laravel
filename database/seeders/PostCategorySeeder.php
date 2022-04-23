@@ -15,16 +15,11 @@ class PostCategorySeeder extends Seeder
 
 
        $items = [
-        ['image'=>'uploads/post_categories/it.jpg','published'=>'1'],
-        ['image'=>'uploads/post_categories/programing.jpg','published'=>'1'],
-        ['published'=>'1'],
-        ['published'=>'0'],
-        ['published'=>'1'],
-        ['published'=>'1'],
-        ['published'=>'0'],
-        ['image'=>'uploads/post_categories/it.jpg','published'=>'1'],
-        ['image'=>'uploads/post_categories/it.jpg','published'=>'0'],
-        ['image'=>'uploads/post_categories/it.jpg','published'=>'1'],
+        ['image'=>'uploads/it.jpg','published'=>'1'],
+        ['image'=>'uploads/programing.jpg','published'=>'1'],
+        ['image'=>'uploads/it.jpg','published'=>'1'],
+        ['image'=>'uploads/it.jpg','published'=>'0'],
+        ['image'=>'uploads/it.jpg','published'=>'1'],
   
        ];
        DB::table('post_categories')->insert($items);      
@@ -46,7 +41,7 @@ class PostCategorySeeder extends Seeder
             ['title'=>'شبكات التواصل الأجتماعي','slug'=>'شبكات-التواصل-الأجتماعي','lang'=>'ar','post_category_id'=>'4'],
 
             ['title'=>'Security','slug'=>'Security','lang'=>'en','post_category_id'=>'5'],
-            ['title'=>'امن المعلومات','slug'=>'الأقصر','lang'=>'ar','post_category_id'=>'5'],  
+            ['title'=>'امن المعلومات','slug'=>'امن-المعلومات','lang'=>'ar','post_category_id'=>'5'],  
             
        ];
        DB::table('post_categories_translations')->insert($translated_items);  

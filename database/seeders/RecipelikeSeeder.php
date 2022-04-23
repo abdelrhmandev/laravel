@@ -15,14 +15,20 @@ class RecipelikeSeeder extends Seeder
 
 
        $items = [
-        ['recipe_id'=>'1','user_id'=>'1','likes'=>'1'], 
-        ['recipe_id'=>'2','user_id'=>'2','likes'=>'1'],
-        ['recipe_id'=>'3','user_id'=>'3','likes'=>'1'],
-        ['recipe_id'=>'2','user_id'=>'4','likes'=>'1'],
+        
+        ['user_id'=>'1','recipe_id'=>'1','likes'=>'1'], 
+        ['user_id'=>'2','recipe_id'=>'2','likes'=>'1'],
+        ['user_id'=>'3','recipe_id'=>'3','likes'=>'1'],
+        ['user_id'=>'1','recipe_id'=>'4','likes'=>'1'],
+
+        ['user_id'=>'3','recipe_id'=>'4','likes'=>'0'], 
+        ['user_id'=>'1','recipe_id'=>'4','likes'=>'0'], 
+        ['user_id'=>'2','recipe_id'=>'2','likes'=>'0'], 
+        ['user_id'=>'4','recipe_id'=>'1','likes'=>'0'], 
 
         
     ];
-       DB::table('recipes_likes')->insert($items);      
+       DB::table('recipe_likes')->insert($items);      
 
     }
 }

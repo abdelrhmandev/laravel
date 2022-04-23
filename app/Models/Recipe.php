@@ -20,4 +20,16 @@ class Recipe extends Model
         return $this->belongsTo(RecipeCategory::class);
     }
 
+    public function likes(){
+        return $this->hasMany(RecipeLike::class);
+    }
+    public function reviews(){
+        return $this->hasMany(RecipeReview::class);
+    }
+    public function tags(){
+    return $this->belongsToMany('App\Models\Tag', 'recipe_tag', 'recipe_id', 'tag_id');
+    }
+    
+
+
 }

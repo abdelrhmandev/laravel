@@ -4,8 +4,10 @@
       <tr>
         <th>#</th>
         <th>Title</th>
-        <th>Descripton</th>
+        {{-- <th>Descripton</th> --}}
         <th>Category</th>
+        <th>Likes</th>
+        <th>Review</th>
       </tr>
     </thead>
     <tbody>
@@ -13,9 +15,19 @@
       <tr>
         <td>{{ $recipe->id }}</td>
         <td>{{ $recipe->recipe->title }}</td>         
-        <td>{{ $recipe->recipe->description }}</td>
+        {{-- <td>{{ $recipe->recipe->description }}</td> --}}
         <td>{{ ($recipe->recipe_category->category->title) }}</td>
-         
+
+        <td>{{ $recipe->likes->count() }}
+        @if($recipe->likes->count())
+
+{{  dd($recipe->likes->user()) }}
+
+        @endif
+          
+        </td>
+        <td>{{ $recipe->reviews->count() }}</td>
+
         </td> 
     </tr>
       @empty

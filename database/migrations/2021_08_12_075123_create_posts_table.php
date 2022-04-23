@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->enum('published', ['0','1'])->default(1);
             $table->boolean('featured')->default(0);
             $table->string('image',150)->nullable();
+            $table->string('author');
 			$table->softDeletes(); //////Option 
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
