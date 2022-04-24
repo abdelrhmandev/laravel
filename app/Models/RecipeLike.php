@@ -14,4 +14,12 @@ class RecipeLike extends Model
         return $this->belongsToMany(User::class);
     }
 
+
+    public function uuusulikes()
+			{
+                return $this->belongsToMany('App\Models\RecipeLike', 'recipe_likes', 'recipe_id', 'user_id');
+
+			}
+
+
 }

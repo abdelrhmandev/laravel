@@ -8,6 +8,8 @@
         <th>Category</th>
         <th>Likes</th>
         <th>Review</th>
+
+        <th>Tags</th>
       </tr>
     </thead>
     <tbody>
@@ -19,11 +21,22 @@
         <td>{{ ($recipe->recipe_category->category->title) }}</td>
 
         <td>{{ $recipe->likes->count() }}
-        @if($recipe->likes->count())
+    
 
-{{  dd($recipe->likes->user()) }}
 
-        @endif
+          @foreach ($recipe->users_likes as $vv)
+          <a href="#" class="btn btn-primary">{{$vv->users_likes->uuusulikes->name }}</a>
+          @endforeach
+
+
+      @foreach ($recipe->tags as $tag)
+      <a href="#" class="btn btn-primary">{{$tag->tag->title }}</a>
+      @endforeach
+
+
+ 
+
+        
           
         </td>
         <td>{{ $recipe->reviews->count() }}</td>
