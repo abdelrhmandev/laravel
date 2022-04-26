@@ -15,7 +15,7 @@ class CreateRecipesTable extends Migration
     {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('recipe_category_id');
+            $table->unsignedBigInteger('recipe_category_id')->nullable();
 			$table->string('image',150)->nullable();
 			$table->enum('published', ['0','1'])->default(1);
             $table->enum('featured', ['0','1'])->default(1);

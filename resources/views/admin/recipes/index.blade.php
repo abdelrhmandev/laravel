@@ -7,9 +7,10 @@
  
         <th>Category</th>
         <th>Likes</th>
+        <th>Dislikes</th>
         <th>Tags</th>
         <th>Review</th>
-        <th>Users has Reviewed</th>
+        {{-- <th>Users has Reviewed</th> --}}
       </tr>
     </thead>
     <tbody>
@@ -18,13 +19,16 @@
         <td>{{ $recipe->id }}</td>
         <td>{{ $recipe->recipe->title }}</td>         
  
-        <td>{{ ($recipe->recipe_category->category->title) }}</td>
+        <td>{{ ($recipe->recipe_category->category->title ?? '-') }}</td>
 
         <td>
-          {{ $recipe->likes->count() }}
-    
+          {{ $recipe->likes->count() }}  
         </td>
- 
+
+        <td>
+          {{ $recipe->dislikes->count() }}  
+        </td>
+
 
       <td>
       @foreach ($recipe->tags as $tag)
@@ -36,9 +40,9 @@
 
        
         <td>
-          @foreach ($recipe->users_likes as $user)
-        {{ $user }}
-          @endforeach
+          {{-- @foreach ($recipe->users_likes as $user)
+          <a href="#">{{ $user->name  }}</a>
+          @endforeach --}}
           
         </td>
 

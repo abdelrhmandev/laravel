@@ -23,6 +23,10 @@ class Recipe extends Model
     public function likes(){
         return $this->hasMany(RecipeLike::class);
     }
+    public function dislikes(){
+        return $this->hasMany(RecipeLike::class)->where('likes','0');
+    }
+
     public function reviews(){
         return $this->hasMany(RecipeReview::class);
     }
