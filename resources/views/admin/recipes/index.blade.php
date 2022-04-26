@@ -1,15 +1,15 @@
-<table cellpading="0" cellspacing="2" border="0">
+<table cellpading="5" cellspacing="15" border="0">
 
     <thead>
       <tr>
         <th>#</th>
         <th>Title</th>
-        {{-- <th>Descripton</th> --}}
+ 
         <th>Category</th>
         <th>Likes</th>
-        <th>Review</th>
-
         <th>Tags</th>
+        <th>Review</th>
+        <th>Users has Reviewed</th>
       </tr>
     </thead>
     <tbody>
@@ -17,31 +17,31 @@
       <tr>
         <td>{{ $recipe->id }}</td>
         <td>{{ $recipe->recipe->title }}</td>         
-        {{-- <td>{{ $recipe->recipe->description }}</td> --}}
+ 
         <td>{{ ($recipe->recipe_category->category->title) }}</td>
 
-        <td>{{ $recipe->likes->count() }}
+        <td>
+          {{ $recipe->likes->count() }}
     
+        </td>
+ 
 
-
-          @foreach ($recipe->users_likes as $vv)
-          <a href="#" class="btn btn-primary">{{$vv->users_likes->uuusulikes->name }}</a>
-          @endforeach
-
-
+      <td>
       @foreach ($recipe->tags as $tag)
       <a href="#" class="btn btn-primary">{{$tag->tag->title }}</a>
       @endforeach
-
-
- 
-
-        
-          
+  
         </td>
         <td>{{ $recipe->reviews->count() }}</td>
 
-        </td> 
+       
+        <td>
+          @foreach ($recipe->users_likes as $user)
+        {{ $user }}
+          @endforeach
+          
+        </td>
+
     </tr>
       @empty
       {{  trans('area.no_aras_added') }}

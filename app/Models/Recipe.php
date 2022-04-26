@@ -31,7 +31,7 @@ class Recipe extends Model
     }
     
     public function users_likes(){
-        return $this->belongsToMany('App\Models\RecipeLike', 'recipe_likes', 'recipe_id', 'user_id');
+        return $this->belongsToMany('App\Models\User', 'recipe_likes', 'recipe_id', 'user_id');
         }
 
 }
