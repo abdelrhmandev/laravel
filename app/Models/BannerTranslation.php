@@ -16,7 +16,7 @@ class BannerTranslation extends Model
 	];
 
     public function banner(){
-        return $this->belongsTo(banner::class);
+        return $this->belongsTo(Banner::class);
     }
 
 }

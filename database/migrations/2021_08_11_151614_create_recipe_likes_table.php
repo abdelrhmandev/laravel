@@ -16,12 +16,7 @@ class CreateRecipelikesTable extends Migration
         Schema::create('recipe_likes', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained()->casacadeOnDelete();
             $table->foreignId('recipe_id')->constrained()->casacadeOnDelete();
-            $table->boolean('likes')->comment('1 for like , 0 for dislike');
-            $table->timestamps();
-			 
-
-
-            
+            $table->boolean('likes')->comment('1 for like , 0 for dislike');         
         });
  
     }

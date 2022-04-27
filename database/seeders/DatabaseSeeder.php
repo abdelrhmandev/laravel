@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
             RecipeTagSeeder::class,
             RecipelikeSeeder::class,
             FaqSeeder::class,
+            CopounSeeder::class,
+            SettingSeeder::class,
         ]); 
     }
 }

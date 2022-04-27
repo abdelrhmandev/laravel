@@ -28,8 +28,8 @@ class PostCategorySeeder extends Seeder
 
        $translated_items = [
 
-            ['title'=>'IT','slug'=>'alexandria','lang'=>'en','post_category_id'=>'1'],
-            ['title'=>'نظم المعلومات','slug'=>'الإسكندرية','lang'=>'ar','post_category_id'=>'1'],
+            ['title'=>'IT','slug'=>'it','lang'=>'en','post_category_id'=>'1'],
+            ['title'=>'نظم المعلومات','slug'=>'نظم-المعلومات','lang'=>'ar','post_category_id'=>'1'],
 
             ['title'=>'Programing','slug'=>'programing','lang'=>'en','post_category_id'=>'2'],
             ['title'=>'البرمجه','slug'=>'البرمجه','lang'=>'ar','post_category_id'=>'2'],
