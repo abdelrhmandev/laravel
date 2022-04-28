@@ -18,7 +18,6 @@ class CreateRecipelikesTable extends Migration
             $table->foreignId('recipe_id')->constrained()->casacadeOnDelete();
             $table->boolean('likes')->comment('1 for like , 0 for dislike');         
         });
- 
     }
 
     /**

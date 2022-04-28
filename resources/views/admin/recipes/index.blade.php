@@ -4,7 +4,8 @@
       <tr>
         <th>#</th>
         <th>Title</th>
- 
+        <th>cook[minutes]</th>
+        <th>servings[persons]</th>
         <th>Category</th>
         <th>Likes</th>
         <th>Dislikes</th>
@@ -19,6 +20,12 @@
         <td>{{ $recipe->id }}</td>
         <td>{{ $recipe->recipe->title }}</td>         
  
+
+        <td>{{ $recipe->cook }}</td>
+
+        <td>{{ $recipe->servings }}</td>
+
+
         <td>{{ ($recipe->recipe_category->category->title ?? '-') }}</td>
 
         <td>

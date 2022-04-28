@@ -26,9 +26,9 @@ class CreateBannersTable extends Migration
             $table->string('slug')->unique();
             $table->longText('description')->nullable();
 			$table->string('lang')->index();			
-            $table->unsignedBigInteger('<banner></banner>_id');
-			$table->unique(['<banner></banner>_id','lang']);  
-            $table->foreign('<banner></banner>_id')->references('id')->on('banners')->onDelete('cascade');   
+            $table->unsignedBigInteger('banner_id');
+			$table->unique(['banner_id','lang']);  
+            $table->foreign('banner_id')->references('id')->on('banners')->onDelete('cascade');   
         });	
     }
 

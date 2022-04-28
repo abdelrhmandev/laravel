@@ -5,7 +5,7 @@
         <th>#</th>
         <th>Title</th>
  
-        <th>Measurement</th>
+  
  
         {{-- <th>Users has Reviewed</th> --}}
       </tr>
@@ -16,7 +16,7 @@
         <td>{{ $nutrition->id }}</td>
         <td>{{ $nutrition->nutrition->title }}</td>         
  
-        <td>{{ $nutrition->nutrition->measurement }}</td>   
+ 
 
   
  
