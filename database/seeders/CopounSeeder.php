@@ -1,8 +1,10 @@
 <?php
 
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class CouponSeeder extends Seeder
+class CopounSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,25 +18,25 @@ class CouponSeeder extends Seeder
                 'code'=>'abc123',
                 'type'=>'fixed',
                 'value'=>'300',
-                'status'=>'active'
+                'published'=>'1'
             ),
             array(
                 'code'=>'111111',
                 'type'=>'percent',
                 'value'=>'10',
-                'status'=>'active'
+                'published'=>'0'
             ),          
               array(
                 'code'=>'zhvb123',
                 'type'=>'fixed',
                 'value'=>'650',
-                'status'=>'active'
+                'published'=>'0'
             ),
             array(
                 'code'=>'26661',
                 'type'=>'percent',
                 'value'=>'30',
-                'status'=>'active'
+                'published'=>'1'
             ),
         );
 

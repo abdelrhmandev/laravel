@@ -18,6 +18,8 @@ class CreateRecipesTable extends Migration
             $table->unsignedBigInteger('recipe_category_id')->nullable();
 			$table->string('image',150)->nullable();
 			$table->enum('published', ['0','1'])->default(1);
+            $table->tinyInteger('cook')->nullable()->comment('preparation time by minutes');
+            $table->tinyInteger('servings')->nullable()->comment('by persons');
             $table->enum('featured', ['0','1'])->default(1);
             $table->foreign('recipe_category_id')->references('id')->on('recipe_categories')->onDelete('cascade');   
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

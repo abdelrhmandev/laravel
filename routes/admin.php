@@ -22,6 +22,8 @@ Route::resource('banners','BannerController');// Bnnner
 Route::resource('users','UserController');// Banner
 
 
+Route::resource('nutritions','NutritionController'); // Nutrition 
+
 Route::resource('recipes','RecipeController'); // Recipes
 Route::resource('recipe-category','RecipeCategoryController'); // Recipe Categories
 
