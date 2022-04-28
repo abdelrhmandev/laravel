@@ -28,6 +28,7 @@ Route::resource('recipes','RecipeController'); // Recipes
 Route::resource('recipe-category','RecipeCategoryController'); // Recipe Categories
 
 Route::resource('posts','PostController'); // Post
+Route::resource('post-category','PostCategoryController'); // Recipe Categories
 
 Route::resource('tags','TagController'); // Post Tags
 
