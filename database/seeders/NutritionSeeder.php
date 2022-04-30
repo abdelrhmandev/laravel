@@ -42,8 +42,6 @@ class NutritionSeeder extends Seeder
             ['title'=>'Sugars','lang'=>'en','nutrition_id'=>'5'],
             ['title'=>'السكريات','lang'=>'ar','nutrition_id'=>'5'],
 
-
-
        ];
        DB::table('nutrition_translations')->insert($translated_items);  
 

@@ -11,16 +11,13 @@
         <th>Dislikes</th>
         <th>Tags</th>
         <th>Review</th>
-        <th>Actions</th>
         {{-- <th>Users has Reviewed</th> --}}
       </tr>
     </thead>
     <tbody>
         @forelse ($recipes as $recipe)        
       <tr>
-        <td>{{ $recipe->id }}
-        <img src="{{ asset('/storage/'.$recipe->image ) }} " width="30" height="30">
-        </td>
+        <td>{{ $recipe->id }}</td>
         <td>{{ $recipe->recipe->title }}</td>         
  
 
@@ -48,13 +45,7 @@
       @endforelse
   
         </td>
-        <td>
-          @if($recipe->reviews->count())
-          <a href="{{  route('recipe.reviews',[$recipe->id]) }}">{{ $recipe->reviews->count() }}</a>
-          @else
-          -
-          @endif
-        </td>
+        <td><a href="{{  route(['recipe.reviews','id'=>$recipe->id]) }}">{{ $recipe->reviews->count() }}</a></td>
 
        
         <td>
@@ -64,9 +55,6 @@
           
         </td>
 
-<td>
-          <a href="{{ route('recipes.edit',[$recipe->id]) }}">Edit </a>
-</td>
     </tr>
       @empty
       {{  trans('area.no_aras_added') }}

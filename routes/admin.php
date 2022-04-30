@@ -25,6 +25,8 @@ Route::resource('users','UserController');// Banner
 Route::resource('nutritions','NutritionController'); // Nutrition 
 
 Route::resource('recipes','RecipeController'); // Recipes
+Route::get('/recipe/reviews/{id}','ReviewController@index')->name('recipe.reviews'); // Recipe Reviews
+
 Route::resource('recipe-category','RecipeCategoryController'); // Recipe Categories
 
 Route::resource('posts','PostController'); // Post
