@@ -12,8 +12,6 @@ class RecipeNutrationSeeder extends Seeder
      */
     public function run()
     {
-
-
        $items = [
         ['nutration_id'=>'1','recipe_id'=>'1','amount'=>'30'], 
         ['nutration_id'=>'1','recipe_id'=>'2','amount'=>'45'], 
@@ -24,13 +22,8 @@ class RecipeNutrationSeeder extends Seeder
         ['nutration_id'=>'5','recipe_id'=>'2','amount'=>'36'],
         ['nutration_id'=>'4','recipe_id'=>'6','amount'=>'66'],
         ['nutration_id'=>'3','recipe_id'=>'7','amount'=>'138'],
-
-
-
-        
-        
     ];
-       DB::table('recipe_nutrations')->insert($items);      
+       DB::table('recipe_nutration')->insert($items);      
 
     }
 }

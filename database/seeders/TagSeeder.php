@@ -20,8 +20,6 @@ class TagSeeder extends Seeder
         ['published'=>'1'],
         ['published'=>'1'],
         ['published'=>'1'],
-
-
         
        ];
        DB::table('tags')->insert($items);      
