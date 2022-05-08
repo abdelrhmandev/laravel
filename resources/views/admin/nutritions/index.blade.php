@@ -1,4 +1,4 @@
-<table cellpading="5" cellspacing="15" border="0">
+<table cellpading="5" cellspacing="5" border="0">
 
     <thead>
       <tr>
@@ -16,13 +16,9 @@
         <td>{{ $nutrition->id }}</td>
         <td>{{ $nutrition->nutrition->title }}</td>         
  
- 
+        <td><a href="{{ route('nutritions.edit',$nutrition->id) }}"> Edit</a></td>
 
-  
- 
- 
-
- 
+        <td><a href="{{ route('nutritions.destroy',$nutrition->id) }}"> delete</a></td>
 
     </tr>
       @empty

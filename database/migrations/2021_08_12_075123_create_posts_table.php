@@ -17,6 +17,10 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('post_category_id')->index()->nullable();
             $table->foreign('post_category_id')->references('id')->on('post_categories')->onDelete('cascade');
+
+            // $table->foreignId('user_id')->nullable()->constrained();
+
+
             $table->enum('published', ['0','1'])->default(1);
             $table->boolean('featured')->default(0);
             $table->string('image',150)->nullable();

@@ -14,12 +14,9 @@ class CreateRecipeNutrationTable extends Migration
     public function up()
     {
         Schema::create('recipe_nutration', function (Blueprint $table) {    
-            $table->id();
+            $table->bigInteger('nutration_id')->unsigned()->index();
             $table->bigInteger('recipe_id')->unsigned()->index();            
-            $table->foreign('recipe_id')->references('id')->on('recipes')->onDelete('cascade');                           
-            $table->bigInteger('nutration_id')->unsigned()->index();            
-            $table->foreign('nutration_id')->references('id')->on('nutrations')->onDelete('cascade');   
-            $table->tinyInteger('amount');
+            $table->decimal('value',20,2);
         });
     }
 
