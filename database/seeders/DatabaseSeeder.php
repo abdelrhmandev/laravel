@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             SettingSeeder::class,
             NutritionSeeder::class,
             RecipeNutrationSeeder::class,
+            LanguageSeeder::class,
         ]); 
     }
 }
