@@ -12,8 +12,8 @@
 // });
 
 
-Route::resource('/languages','LanguageController@index'); 
-Route::resource('/subscriptions','SubscriptionController@index');  
+Route::resource('/languages','LanguageController'); 
+Route::get('/subscriptions','SubscriptionController@index');  
 
 Route::resource('countries','CountryController',['only'=>['index']]); // Country
 Route::resource('cities','CityController'); // Cities
