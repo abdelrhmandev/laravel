@@ -15,7 +15,6 @@
         @forelse ($subrcriptions  as $subrcription)        
       <tr>
         <td>{{ $subrcription->id }}</td>
-        <td>{{ $subrcription->name }}</td>
         <td>{{ $subrcription->email }}</td>         
  
  
