@@ -12,7 +12,7 @@
 // });
 
 
-Route::resource('/languages','LanguagesController@index'); 
+Route::resource('/languages','LanguageController@index'); 
 Route::resource('/subscriptions','SubscriptionController@index');  
 
 Route::resource('countries','CountryController',['only'=>['index']]); // Country

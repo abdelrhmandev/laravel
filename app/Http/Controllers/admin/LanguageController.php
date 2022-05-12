@@ -8,7 +8,7 @@ class LanguageController extends Controller
 {
     public function index(){ 
         if (view()->exists('admin.languages.index')) {
-            $languages = Language::get(); 
+            $languages = Nutrition::with('nutrition')->latest()->get(); 
             return view('admin.languages.index',['languages'=>$languages]);
         }
     }
