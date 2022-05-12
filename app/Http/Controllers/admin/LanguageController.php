@@ -1,33 +1,16 @@
 <?php
+
 namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use LaravelLocalization;
+use App\Models\Language;
 class LanguageController extends Controller
 {
-    public function index()
-    {
-//https://phrase.com/blog/posts/laravel-i18n-modelling-best-practices/
-        foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties){
-        
-        ?>    
-            
-                <?php echo LaravelLocalization::getLocalizedURL($localeCode) ?></p>
-
-
-                
-                  <p>  <?php echo $properties['native'];?></p>
-      
-    
-    
-                
-            
-          
-       <?php
-       }
-    //    echo LaravelLocalization::transRoute('routes.posts'); //https://lavalite.readme.io/docs/trans
-    
-        // return view('admin.languages.index');
+    public function index(){ 
+        if (view()->exists('admin.languages.index')) {
+            $languages = Language::get(); 
+            return view('admin.languages.index',['languages'=>$languages]);
+        }
     }
         public function create()
     {
