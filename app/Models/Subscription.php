@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
-class Subrcription extends Model
+class Subscription extends Model
 {
-    protected $table = 'subrcriptions';
+    protected $table = 'subscriptions';
 }

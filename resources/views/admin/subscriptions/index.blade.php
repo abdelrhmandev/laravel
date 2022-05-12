@@ -3,7 +3,6 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>name</th>
         <th>email</th>
  
   
@@ -12,10 +11,10 @@
       </tr>
     </thead>
     <tbody>
-        @forelse ($subrcriptions  as $subrcription)        
+        @forelse ($subscriptions  as $subscription)        
       <tr>
-        <td>{{ $subrcription->id }}</td>
-        <td>{{ $subrcription->email }}</td>         
+        <td>{{ $subscription->id }}</td>
+        <td>{{ $subscription->email }}</td>         
  
  
     </tr>
