@@ -12,7 +12,7 @@ Route::get('/', 'DashboardController@index')->name('admin.dashboard');
 // });
 
 
-Route::get('/subscriptions','SubrcriptionController@index')->name('subrcriptions.index');  
+Route::get('/subscriptions','SubscriptionController@index')->name('subrcriptions.index');  
 
 
 Route::get('/settings', 'SettingController@index')->name('settings');
