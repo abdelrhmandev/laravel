@@ -14,19 +14,18 @@ class CreateSettingsTable extends Migration
     public function up()
     {
         Schema::create('settings', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();               
             $table->string('key')->unique();
             $table->boolean('is_translatable')->default(false);
             $table->text('plain_value')->nullable();
             $table->timestamps();
         });
         Schema::create('setting_translations', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('setting_id')->unsigned();
-            $table->string('locale');
+            $table->id();
+            $table->foreignId('setting_id')->nullable()->constrained();               
+            $table->string('lang');
             $table->longText('value')->nullable();
-            $table->unique(['setting_id', 'locale']);
-            $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
+            $table->unique(['setting_id', 'lang']);            
         });
     }
 

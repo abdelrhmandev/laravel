@@ -1,69 +1,28 @@
 <?php
 // Route
+#Route::get('/recipe/reviews/{id}','ReviewController@index')->name('recipe.reviews'); // Recipe Reviews
 Route::get('/', 'DashboardController@index')->name('admin.dashboard');
 
-// /*
-//  Muli Languages Application Handle
-// */
-// Route::resource('languages','LanguageController'); // Language
-
-// Route::get('/form/add', function(){
-//     return view('admin.forms.add');
-// });
+Route::group(['prefix' => 'profile'], function () {
+    Route::get('/', 'ProfileController@index')->name('edit.profile');
+    Route::put('update', 'ProfileController@update')->name('update.profile');
+});
 
 
-Route::get('/subscriptions','SubscriptionController@index')->name('subrcriptions.index');  
+Route::get('/subscriptions','SubscriptionController@index')->name('subscriptions.index');  
 
-
-Route::get('/settings', 'SettingController@index')->name('settings');
-Route::post('/settings', 'SettingController@update')->name('settings.update');
-
-Route::resource('/languages','LanguageController'); 
-
-
-Route::resource('countries','CountryController',['only'=>['index']]); // Country
-Route::resource('cities','CityController'); // Cities
-Route::resource('areas','AreaController'); // Areas
-Route::resource('districts','DistrictController'); // Districts
-
-Route::resource('pages','PageController');// Pages
-Route::resource('banners','BannerController');// Bnnners
-Route::resource('brands','BrandController'); // Brands
-
-Route::resource('users','UserController');// Users
+Route::group(['prefix' => 'settings'], function () {
+Route::get('/', 'SettingController@index')->name('settings');
+Route::post('/update', 'SettingController@update')->name('settings.update');
+});
 
 
 
 
-Route::resource('nutritions','NutritionController'); // Nutritions
 
-Route::resource('recipes','RecipeController'); // Recipes
-Route::get('/recipe/reviews/{id}','ReviewController@index')->name('recipe.reviews'); // Recipe Reviews
 
-Route::resource('recipe-category','RecipeCategoryController'); // Recipe Categories
-
-Route::resource('posts','PostController'); // Post
-Route::resource('post-category','PostCategoryController'); // Recipe Categories
-
-Route::resource('tags','TagController'); // Post Tags
-
-Route::resource('post-tag','PostTagController'); // Post Tags
-
-Route::resource('faqs','FaqController'); // Faqs
-
-Route::resource('slides','SlideController'); // Slides
-
-Route::resource('post-category','PostCategoryController'); // Post Categories
 
  
-// Menu Management
- 
- 
-
- 
-
-// End Of Menu Management
-
 
 
 
@@ -74,29 +33,7 @@ Route::resource('post-category','PostCategoryController'); // Post Categories
 // Route::put($path . '/add_menu_item','MenuController@add_menu_item')->name('add_menu_item');
 // Route::post($path . '/hgeneratemenucontrol_override','MenuController@hgeneratemenucontrol_override')->name('hgeneratemenucontrol_override');
 
-// Route::get('profile','AdminController@profile')->name('admin-profile'); // Profile
-// Route::post('/profile/{id}','AdminController@profileUpdate')->name('profile-update'); // Profile Update
-// Route::resource('products-categories','ProductCategoryController'); // Product Categories
-// Route::resource('products','ProductController');// Product
-// Route::resource('post-category','PostCategoryController'); // POST category
-
-// Route::resource('posts-tags','PostTagController'); // Post tag
 
 
 
-// Route::resource(LaravelLocalization::transRoute('routes.posts'),'PostController'); // Post
-
-//Route::resource('messages','MessageController'); // Message
-//Route::get('/messages/five','MessageController@messageFive')->name('messages.five'); 
-
-
-
-
-/* Ecommerce Rotues */
-// Route::resource('orders','OrderController'); // Order
-// Route::resource('shippings','ShippingController'); // Shipping
-// Route::resource('coupons','CouponController'); // Coupon
-
-
-// Route::get('settings','AdminController@settings')->name('settings'); // Settings
 ?>

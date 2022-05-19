@@ -19,8 +19,7 @@ class FaqSeeder extends Seeder
         [],
         [],
         [],
-        [],
-];
+        [],];
        DB::table('faqs')->insert($items);      
 
        $translated_items = [

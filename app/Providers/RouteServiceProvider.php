@@ -62,6 +62,7 @@ class RouteServiceProvider extends ServiceProvider
         'middleware' => ['localeSessionRedirect', 'localizationRedirect','localeViewPath']] , function(){
             Route::group(['prefix' =>config('custom_config.route_prefix') , 'namespace' => $this->admin_namespace], function() {
                 require_once base_path('routes/admin.php');
+                require_once base_path('routes/admin.cruds.php');
                 require_once base_path('routes/admin.auth.php');    
             });
          });

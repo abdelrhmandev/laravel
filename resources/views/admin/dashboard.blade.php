@@ -41,7 +41,7 @@
 <li><a href="{{ route('slides.index') }}" target="_new">Slides</a></li>
 
 
-<li><a href="{{ route('subsribtions.index') }}" target="_new">subsribtions</a></li>
+<li><a href="{{ route('subscriptions.index') }}" target="_new">subscriptions</a></li>
 
 
 
