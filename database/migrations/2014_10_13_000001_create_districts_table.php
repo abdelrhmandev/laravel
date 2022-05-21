@@ -13,8 +13,7 @@ class CreateDistrictsTable extends Migration {
 	public function up() {
 		Schema::create('districts', function (Blueprint $table) {
             $table->id();
-			$table->unsignedBigInteger('area_id');
-			$table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
+			$table->foreignId('area_id')->nullable()->constrained('areas')->onDelete('cascade');
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 			});
@@ -23,9 +22,10 @@ class CreateDistrictsTable extends Migration {
 			$table->string('title');
             $table->string('slug')->unique();
 			$table->string('lang')->index();			
-            $table->unsignedBigInteger('district_id');
 			$table->unique(['district_id','lang']);  
-            $table->foreign('district_id')->references('id')->on('districts')->onDelete('cascade');   
+            $table->index(['title','slug']);
+            $table->foreignId('district_id')->constrained('districts')->onDelete('cascade');
+
 		});	
 	}
 

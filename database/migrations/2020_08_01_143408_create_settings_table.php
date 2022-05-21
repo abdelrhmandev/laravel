@@ -22,7 +22,7 @@ class CreateSettingsTable extends Migration
         });
         Schema::create('setting_translations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('setting_id')->nullable()->constrained();               
+            $table->foreignId('setting_id')->constrained('settings')->onDelete('cascade')->constrained();               
             $table->string('lang');
             $table->longText('value')->nullable();
             $table->unique(['setting_id', 'lang']);            

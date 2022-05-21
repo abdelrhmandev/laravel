@@ -15,13 +15,12 @@ class CreateRecipesTable extends Migration
     {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('recipe_category_id')->nullable();
 			$table->string('image',150)->nullable();
 			$table->enum('published', ['0','1'])->default(1);
             $table->tinyInteger('cook')->nullable()->comment('preparation time by minutes');
             $table->tinyInteger('servings')->nullable()->comment('by persons');
             $table->enum('featured', ['0','1'])->default(1);
-            $table->foreign('recipe_category_id')->references('id')->on('recipe_categories')->onDelete('cascade');   
+            $table->foreignId('recipe_category_id')->nullable()->constrained('recipe_categories')->onDelete('cascade');
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
@@ -32,9 +31,9 @@ class CreateRecipesTable extends Migration
             $table->string('slug')->unique();
             $table->longText('description')->nullable();
 			$table->string('lang')->index();			
-            $table->unsignedBigInteger('recipe_id');
 			$table->unique(['recipe_id','lang']);  
-            $table->foreign('recipe_id')->references('id')->on('recipes')->onDelete('cascade');   
+            $table->index(['title','slug']);
+            $table->foreignId('recipe_id')->constrained('recipes')->onDelete('cascade');
         });	
     }
 

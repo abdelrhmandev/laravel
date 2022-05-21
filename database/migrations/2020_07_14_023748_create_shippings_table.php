@@ -25,9 +25,10 @@ class CreateShippingsTable extends Migration
             $table->id();               
             $table->string('title');
 			$table->string('lang')->index();			
-            $table->unsignedBigInteger('shipping_id');
 			$table->unique(['shipping_id','lang']);  
-            $table->foreign('shipping_id')->references('id')->on('shipping_translations')->onDelete('cascade');   
+            $table->index(['title']);
+            $table->foreignId('shipping_id')->constrained('shippings')->onDelete('cascade');
+
         });	        
     }
 

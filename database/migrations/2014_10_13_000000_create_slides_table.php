@@ -26,9 +26,8 @@ class CreateSlidesTable extends Migration {
 			$table->string('title');
 			$table->longText('description')->nullable();			
 			$table->string('lang')->index();			
-            $table->unsignedBigInteger('slide_id');
 			$table->unique(['slide_id','lang']);  
-            $table->foreign('slide_id')->references('id')->on('slides')->onDelete('cascade');        
+			$table->foreignId('slide_id')->nullable()->constrained('slides')->onDelete('cascade');
 		});	
 	}
 

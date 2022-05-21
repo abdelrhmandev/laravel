@@ -28,9 +28,9 @@ class CreatePostCategoriesTable extends Migration
             $table->string('slug')->unique();
             $table->longText('description')->nullable();
 			$table->string('lang')->index();			
-            $table->unsignedBigInteger('post_category_id');
 			$table->unique(['post_category_id','lang']);  
-            $table->foreign('post_category_id')->references('id')->on('post_categories')->onDelete('cascade');   
+            $table->index(['title','slug']);
+            $table->foreignId('post_category_id')->constrained('post_categories')->onDelete('cascade');
         });	
     }
 

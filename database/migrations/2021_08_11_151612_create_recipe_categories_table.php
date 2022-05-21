@@ -28,9 +28,10 @@ class CreateRecipeCategoriesTable extends Migration
             $table->string('slug')->unique();
             $table->longText('description')->nullable();
 			$table->string('lang')->index();			
-            $table->unsignedBigInteger('recipe_category_id');
 			$table->unique(['recipe_category_id','lang']);  
-            $table->foreign('recipe_category_id')->references('id')->on('recipe_categories')->onDelete('cascade');   
+            $table->index(['title','slug']);
+            $table->foreignId('recipe_category_id')->nullable()->constrained('recipe_categories')->onDelete('cascade');
+
         });	
     }
 

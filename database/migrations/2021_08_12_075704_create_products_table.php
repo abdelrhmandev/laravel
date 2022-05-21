@@ -14,7 +14,9 @@ class CreateProductsTable  extends Migration
         public function up()
         {
             Schema::create('products', function (Blueprint $table) {
-
+                $table->foreignId('brand_id')->nullable()->constrained('brands')->onDelete('cascade');
+                $table->string('image',150)->nullable();
+                $table->enum('published', ['0','1'])->default(1);
                 $table->decimal('price', 18, 4)->unsigned();
                 $table->decimal('special_price', 18, 4)->unsigned()->nullable();
                 $table->string('special_price_type')->nullable();
@@ -25,11 +27,8 @@ class CreateProductsTable  extends Migration
                 $table->boolean('manage_stock');
                 $table->integer('qty')->nullable();
                 $table->boolean('in_stock');
-                $table->integer('viewed')->unsigned()->default(0);
-                $table->integer('brand_id')->unsigned()->nullable();
-                $table->foreign('brand_id')->references('id')->on('brands')->onDelete('set null');                
-                $table->string('image',150)->nullable();
-                $table->enum('published', ['0','1'])->default(1);
+                $table->integer('viewed')->unsigned()->default(0);                 
+                $table->index(['sku']);
                 $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
                 });  
@@ -40,9 +39,9 @@ class CreateProductsTable  extends Migration
                 $table->string('slug')->unique();
                 $table->longText('description')->nullable();
                 $table->string('lang')->index();			
-                $table->unsignedBigInteger('product_id');
                 $table->unique(['product_id','lang']);  
-                $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');   
+                $table->index(['title','slug']);
+                $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             });  
     
             }
@@ -53,6 +52,7 @@ class CreateProductsTable  extends Migration
          */
         public function down()
         {
-            Schema::drop('subscriptions');
+            Schema::drop('products');
+            Schema::drop('product_translations');
         }    
 }  

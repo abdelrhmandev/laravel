@@ -13,8 +13,7 @@ class CreateAreasTable extends Migration {
 	public function up() {
 		Schema::create('areas', function (Blueprint $table) {
             $table->id();
-			$table->unsignedBigInteger('city_id');
-			$table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
+			$table->foreignId('city_id')->nullable()->constrained('cities')->onDelete('cascade');
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 			});
@@ -23,9 +22,10 @@ class CreateAreasTable extends Migration {
 			$table->string('title');
             $table->string('slug')->unique();
 			$table->string('lang')->index();			
-            $table->unsignedBigInteger('area_id');
 			$table->unique(['area_id','lang']);  
-            $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');      
+			$table->index(['title','slug']);
+			$table->foreignId('area_id')->constrained('areas')->onDelete('cascade');
+
 		});	
 	}
 

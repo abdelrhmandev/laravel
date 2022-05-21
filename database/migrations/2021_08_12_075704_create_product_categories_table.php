@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,20 +19,19 @@ class CreateProductCategoriesTable  extends Migration
                 $table->enum('published', ['0','1'])->default(1);
                 $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-                });  
-
+            });  
             Schema::create('product_categories_translations', function (Blueprint $table) {
                 $table->id();               
                 $table->string('title');
                 $table->string('slug')->unique();
                 $table->longText('description')->nullable();
                 $table->string('lang')->index();			
-                $table->unsignedBigInteger('product_category_id');
+                $table->index(['title','slug']);
                 $table->unique(['product_category_id','lang']);  
-                $table->foreign('product_category_id')->references('id')->on('products_categories')->onDelete('cascade');   
+                $table->foreignId('product_category_id')->constrained('product_categories')->onDelete('cascade');
             });  
     
-            }
+        }
         /**
          * Reverse the migrations.
          *

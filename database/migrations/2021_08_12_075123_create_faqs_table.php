@@ -22,12 +22,12 @@ class CreateFaqsTable extends Migration
         Schema::create('faq_translations', function (Blueprint $table) {                 
             $table->id();  
             $table->string('question');
-            $table->string('answer');
+            $table->text('answer');
 			$table->string('lang')->index();			
-            $table->unsignedBigInteger('faq_id');
 			$table->unique(['faq_id','lang']);  
-            $table->foreign('faq_id')->references('id')->on('faqs')->onDelete('cascade');               
-        });	
+            $table->index(['question']);
+            $table->foreignId('faq_id')->constrained('faqs')->onDelete('cascade');
+            });	
     }
 
     /**

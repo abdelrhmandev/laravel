@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -26,9 +25,10 @@ class CreateBrandsTable extends Migration
             $table->string('slug')->unique();
             $table->longText('description')->nullable();
 			$table->string('lang')->index();			
-            $table->unsignedBigInteger('brand_id');
 			$table->unique(['brand_id','lang']);  
-            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');   
+            $table->index(['title','slug']);
+            $table->foreignId('brand_id')->constrained('brands')->onDelete('cascade');
+
         });	    
     }
 
@@ -40,5 +40,6 @@ class CreateBrandsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('brands');
+        Schema::dropIfExists('brand_tranlations');
     }
 }

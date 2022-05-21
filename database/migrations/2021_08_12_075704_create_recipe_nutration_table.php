@@ -15,9 +15,9 @@ class CreateRecipeNutrationTable extends Migration
     {
         Schema::create('recipe_nutration', function (Blueprint $table) { 
             $table->id();   
-            $table->bigInteger('nutration_id');
-            $table->bigInteger('recipe_id');            
             $table->decimal('value',20,2);
+            $table->foreignId('recipe_id')->constrained('recipes')->onDelete('cascade');
+            $table->foreignId('nutration_id')->constrained('nutrations')->onDelete('cascade');
         });
     }
 

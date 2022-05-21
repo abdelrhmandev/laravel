@@ -20,10 +20,11 @@ class CreateNutritionsTable extends Migration {
 		Schema::create('nutrition_translations', function (Blueprint $table) {            
 			$table->id();
 			$table->string('title');
+			$table->string('slug');
 			$table->string('lang')->index();			
-            $table->unsignedBigInteger('nutrition_id');
-			$table->unique(['nutrition_id','lang']);  
-            $table->foreign('nutrition_id')->references('id')->on('nutritions')->onDelete('cascade');        
+			$table->unique(['nutrition_id','lang']); 
+			$table->index(['title','slug']); 
+			$table->foreignId('nutrition_id')->constrained('nutritions')->onDelete('cascade');
 		});	
 	}
 

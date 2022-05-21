@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-class SettingController extends Controller
+class ShippingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class SettingController extends Controller
 
         // dd(user_setting('test1'));
 
-        return view('pages.account.settings.settings');
+        return view('admin.shippings.index');
     }
 
     /**

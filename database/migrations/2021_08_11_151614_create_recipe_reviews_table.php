@@ -15,13 +15,11 @@ class CreateRecipeReviewsTable extends Migration
     {
         Schema::create('recipe_reviews', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('recipe_id');            
             $table->text('comment')->nullable();
             $table->integer('rate'); 
-            $table->foreign('recipe_id')->references('id')->on('recipes')->onDelete('cascade');   
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');   
-			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('recipe_id')->constrained('recipes')->onDelete('cascade');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
  

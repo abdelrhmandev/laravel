@@ -25,10 +25,10 @@ class CreateTagsTable extends Migration
             $table->id();  
             $table->string('title');
             $table->string('slug')->unique();
-            $table->unsignedBigInteger('tag_id');
             $table->string('lang')->index();	
 			$table->unique(['tag_id','lang']);  
-            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');               
+            $table->index(['title','slug']);
+            $table->foreignId('tag_id')->nullable()->constrained('tags')->onDelete('cascade');
         });	
     }
 
