@@ -14,7 +14,7 @@ class CreateProductsTable  extends Migration
         public function up()
         {
             Schema::create('products', function (Blueprint $table) {
-                $table->foreignId('brand_id')->nullable()->constrained('brands')->onDelete('cascade');
+                $table->foreignId('brand_id')->nullable()->constrained('brands');
                 $table->string('image',150)->nullable();
                 $table->enum('published', ['0','1'])->default(1);
                 $table->decimal('price', 18, 4)->unsigned();
@@ -25,7 +25,7 @@ class CreateProductsTable  extends Migration
                 $table->decimal('selling_price', 18, 4)->unsigned()->nullable();
                 $table->string('sku')->nullable();
                 $table->boolean('manage_stock');
-                $table->integer('qty')->nullable();
+                $table->integer('quantity')->nullable();
                 $table->boolean('in_stock');
                 $table->integer('viewed')->unsigned()->default(0);                 
                 $table->index(['sku']);
@@ -39,9 +39,8 @@ class CreateProductsTable  extends Migration
                 $table->string('slug')->unique();
                 $table->longText('description')->nullable();
                 $table->string('lang')->index();			
-                $table->unique(['product_id','lang']);  
-                $table->index(['title','slug']);
-                $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
+                // $table->unique(['product_id','lang']);  
+                // $table->foreignId('product_id')->constrained('products');
             });  
     
             }

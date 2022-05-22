@@ -17,6 +17,7 @@ class CreateRecipeReviewsTable extends Migration
             $table->id();
             $table->text('comment')->nullable();
             $table->integer('rate'); 
+            $table->unique(['user_id', 'recipe_id']);
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('recipe_id')->constrained('recipes')->onDelete('cascade');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

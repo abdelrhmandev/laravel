@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRecipeNutrationTable extends Migration
+class CreateCouponsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateRecipeNutrationTable extends Migration
      */
     public function up()
     {
-        Schema::create('recipe_nutration', function (Blueprint $table) { 
-            $table->id();   
+        Schema::create('coupons', function (Blueprint $table) {
+            $table->id();
+            $table->string('code')->unique();
+            $table->enum('type',['fixed','percent'])->default('fixed');
             $table->decimal('value',20,2);
-            $table->foreignId('recipe_id')->constrained('recipes')->onDelete('cascade');
-            $table->foreignId('nutration_id')->constrained('nutrations')->onDelete('cascade');
+            $table->enum('published', ['0','1'])->default(1);
+            $table->timestamps();
         });
     }
 
@@ -28,6 +30,6 @@ class CreateRecipeNutrationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recipe_nutration');
+        Schema::dropIfExists('coupons');
     }
 }
