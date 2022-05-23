@@ -13,17 +13,16 @@ class CreateNutritionsTable extends Migration {
 	public function up() {
 		Schema::create('nutritions', function (Blueprint $table) {
             $table->id();
-			$table->softDeletes(); //////Option 
+			$table->enum('published', ['0','1'])->default(1);
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 			});
 		Schema::create('nutrition_translations', function (Blueprint $table) {            
 			$table->id();
 			$table->string('title');
-			$table->string('slug');
 			$table->string('lang')->index();			
 			$table->unique(['nutrition_id','lang']); 
-			$table->index(['title','slug']); 
+			$table->index(['title']); 
 			$table->foreignId('nutrition_id')->constrained('nutritions')->onDelete('cascade');
 		});	
 	}

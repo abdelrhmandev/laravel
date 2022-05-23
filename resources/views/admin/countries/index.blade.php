@@ -12,6 +12,10 @@
         <td>{{  $country->id }}</td>
         <td>{{  $country->{'title_'.app()->getLocale() } }}</td>
         <td>{{  $country->city->count() }}</td>
+
+
+        {{ asset('storage/flags/'.strtolower($country->code).'.svg')}}
+        <br/>
     </tr>
     @empty
         {{  trans('city.no_cities_added') }}

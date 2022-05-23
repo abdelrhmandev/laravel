@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBannersTable extends Migration
+class CreateRecipesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,26 @@ class CreateBannersTable extends Migration
      */
     public function up()
     {
-        Schema::create('banners', function (Blueprint $table) {
+        Schema::create('recipes', function (Blueprint $table) {
             $table->id();
 			$table->string('image',150)->nullable();
 			$table->enum('published', ['0','1'])->default(1);
+            $table->tinyInteger('cook')->nullable()->comment('preparation time by minutes');
+            $table->tinyInteger('servings')->nullable()->comment('by persons');
+            $table->enum('featured', ['0','1'])->default(1);
+            $table->foreignId('recipe_category_id')->nullable()->constrained('recipe_categories')->onDelete('cascade');
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
-        Schema::create('banner_translations', function (Blueprint $table) {                 
+        
+        Schema::create('recipe_translations', function (Blueprint $table) {                 
             $table->id();               
             $table->string('title');
             $table->string('slug')->unique();
             $table->longText('description')->nullable();
 			$table->string('lang')->index();			
-			$table->unique(['banner_id','lang']);  
-            $table->index(['title','slug']);
-            $table->foreignId('banner_id')->constrained('banners')->onDelete('cascade');
+			$table->unique(['recipe_id','lang']);              
+            $table->foreignId('recipe_id')->constrained('recipes')->onDelete('cascade');
         });	
     }
 
@@ -39,7 +43,7 @@ class CreateBannersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('banners');
-        Schema::dropIfExists('banner_translations');
+        Schema::dropIfExists('recipes');
+        Schema::dropIfExists('recipe_translations');
     }
 }

@@ -31,8 +31,7 @@ class DatabaseSeeder extends Seeder
             CopounSeeder::class,
             SettingSeeder::class,
             NutritionSeeder::class,
-            RecipeNutrationSeeder::class,
-            LanguageSeeder::class,
+            RecipeNutritionSeeder::class,
         ]); 
     }
 }

@@ -15,15 +15,13 @@ class CreatePostCommentsTable extends Migration
     {
         Schema::create('post_comments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('post_id')->nullable();
             $table->text('comment');
             $table->enum('published', ['0','1'])->default(1);
             $table->text('replied_comment')->nullable();
             $table->unsignedBigInteger('parent_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('SET NULL');
-            $table->timestamps();
+            $table->foreignId('post_id')->nullable()->constrained('posts')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); 
+           $table->timestamps();
         });
     }
 

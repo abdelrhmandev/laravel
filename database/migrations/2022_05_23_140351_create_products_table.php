@@ -14,6 +14,7 @@ class CreateProductsTable  extends Migration
         public function up()
         {
             Schema::create('products', function (Blueprint $table) {
+                $table->id();               
                 $table->foreignId('brand_id')->nullable()->constrained('brands');
                 $table->string('image',150)->nullable();
                 $table->enum('published', ['0','1'])->default(1);
@@ -39,8 +40,8 @@ class CreateProductsTable  extends Migration
                 $table->string('slug')->unique();
                 $table->longText('description')->nullable();
                 $table->string('lang')->index();			
-                // $table->unique(['product_id','lang']);  
-                // $table->foreignId('product_id')->constrained('products');
+                $table->unique(['product_id','lang']);  
+                $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             });  
     
             }
