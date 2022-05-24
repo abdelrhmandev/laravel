@@ -13,8 +13,7 @@
         <td>{{  $country->{'title_'.app()->getLocale() } }}</td>
         <td>{{  $country->city->count() }}</td>
 
-
-        {{ asset('storage/flags/'.strtolower($country->code).'.svg')}}
+        <a href="{{ asset('storage/flags/'.strtolower($country->code).'.svg') }}">{{ $country->code}}</a>
         <br/>
     </tr>
     @empty
