@@ -1,4 +1,13 @@
-<table cellpading="2">
+<h1>
+  <a target="_new" href="{{ URL::asset('public/flags/eg.svg') }}">Click</a>
+  </h1>
+
+<br/>
+
+{{  public_path() }}
+
+ 
+<table cellpading="2" class="d-none">
     <thead>
       <tr>
         <td>#</td>
@@ -11,9 +20,7 @@
     <tr>
         <td>{{  $country->id }}</td>
         <td>{{  $country->{'title_'.app()->getLocale() } }}</td>
-        <td>{{  $country->city->count() }}</td>
-
-        <a href="{{ asset('storage/flags/'.strtolower($country->code).'.svg') }}">{{ $country->code}}</a>
+        <td>{{  $country->city->count() }}</td>       
         <br/>
     </tr>
     @empty
