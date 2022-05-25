@@ -39,6 +39,8 @@ class CreateProductsTable  extends Migration
                 $table->string('title');
                 $table->string('slug')->unique();
                 $table->longText('description')->nullable();
+                $table->string('meta_title')->nullable();
+                $table->longText('meta_description')->nullable();    
                 $table->string('lang')->index();			
                 $table->unique(['product_id','lang']);  
                 $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
