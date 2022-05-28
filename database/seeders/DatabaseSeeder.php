@@ -1,7 +1,5 @@
 <?php
-
 namespace Database\Seeders;
-
 use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
@@ -20,14 +18,19 @@ class DatabaseSeeder extends Seeder
             DistrictSeeder::class,
             SlideSeeder::class,   
             TagSeeder::class,
-            PostSeeder::class,
+            PageSeeder::class,
             PostCategorySeeder::class,
+            PostSeeder::class,
+            PostCommentSeeder::class,  
+            FaqSeeder::class,
+            ClientSeeder::class,
+            BannerSeeder::class,
             RecipeCategorySeeder::class,
             RecipeSeeder::class,
             RecipeReviewSeeder::class,
             RecipeTagSeeder::class,
             RecipelikeSeeder::class,
-            FaqSeeder::class,
+            BrandSeeder::class,
             CopounSeeder::class,
             SettingSeeder::class,
             NutritionSeeder::class,

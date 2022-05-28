@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -15,35 +14,31 @@ class BannerSeeder extends Seeder
 
 
        $items = [
-        ['published'=>'1','image'=>'uploads/banners/adidas.png'],
-        ['published'=>'1','image'=>'uploads/banners/nike.png'],
-        ['published'=>'1','image'=>'uploads/banners/kappa.png'],
-        ['published'=>'1','image'=>'uploads/banners/prada.png'],
-        ['published'=>'1','image'=>'uploads/banners/hermes.png'],
+        ['published'=>'1','image'=>'uploads/banners/1.jpg'],
+        ['published'=>'1','image'=>'uploads/banners/2.jpg'],
+        ['published'=>'1','image'=>'uploads/banners/3.jpg'],
+        ['published'=>'1','image'=>'uploads/banners/4.jpg'],
+        ['published'=>'1','image'=>'uploads/banners/5.jpg'],
         
        ];
        DB::table('banners')->insert($items);      
 
        $translated_items = [
 
+            ['title'=>'Banner1','description'=>'Lorem ipsum, or lipsum as it is sometimes known','lang'=>'en','banner_id'=>'1'],
+            ['title'=>'بنر 1','description'=>'وريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل','lang'=>'ar','banner_id'=>'1'],
 
-            ['title'=>'Adidas','slug'=>'adidas','lang'=>'en','banner_id'=>'1'],
-            ['title'=>'أديداس','slug'=>'أديداس','lang'=>'ar','banner_id'=>'1'],
+            ['title'=>'Banner2','description'=>'Lorem ipsum, or lipsum as it is sometimes known','lang'=>'en','banner_id'=>'2'],
+            ['title'=>'بنر 2','description'=>'وريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل','lang'=>'ar','banner_id'=>'2'],
 
+            ['title'=>'Banner3','description'=>'Lorem ipsum, or lipsum as it is sometimes known','lang'=>'en','banner_id'=>'3'],
+            ['title'=>'بنر 3','description'=>'وريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل','lang'=>'ar','banner_id'=>'3'],      
 
-            ['title'=>'Nike','slug'=>'nike','lang'=>'en','banner_id'=>'2'],
-            ['title'=>'نايك','slug'=>'نايك','lang'=>'ar','banner_id'=>'2'],
+            ['title'=>'Banner4','description'=>'Lorem ipsum, or lipsum as it is sometimes known','lang'=>'en','banner_id'=>'4'],
+            ['title'=>'بنر 4','description'=>'وريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل','lang'=>'ar','banner_id'=>'4'],      
 
-            ['title'=>'Kappa','slug'=>'kappa','lang'=>'en','banner_id'=>'3'],
-            ['title'=>'كابا','slug'=>'كابا','lang'=>'ar','banner_id'=>'3'],      
-
-
-            ['title'=>'Prada','slug'=>'prada','lang'=>'en','banner_id'=>'4'],
-            ['title'=>'برادا ','slug'=>'برادا ','lang'=>'ar','banner_id'=>'4'],      
-
-
-            ['title'=>'Hermes','slug'=>'hermes','lang'=>'en','banner_id'=>'5'],
-            ['title'=>'هيرميس','slug'=>'هيرميس','lang'=>'ar','banner_id'=>'5'],
+            ['title'=>'Banner5','description'=>'Lorem ipsum, or lipsum as it is sometimes known','lang'=>'en','banner_id'=>'5'],
+            ['title'=>'بنر 5','description'=>'وريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل','lang'=>'ar','banner_id'=>'5'],      
 
        ];
        DB::table('banner_translations')->insert($translated_items);  

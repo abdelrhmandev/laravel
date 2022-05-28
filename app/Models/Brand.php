@@ -1,19 +1,19 @@
 <?php
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
-class Banner extends Model
+class Brand extends Model
 {
-    protected $table = 'banners';
+    protected $table = 'brands';
 
     protected $fillable = [
-		// 'recipe_category_id',
+		'image','published'
 	];
-    public function banner_translation(){
-        return $this->hasMany(RecipeTranslation::class);
+    public function brand_translation(){
+        return $this->hasMany(BrandTranslation::class);
     }
     # Translation method
-    public function banner(){
-        return $this->hasOne(RecipeTranslation::class)->where('lang',app()->getLocale());
+    public function brand(){
+        return $this->hasOne(BrandTranslation::class)->where('lang',app()->getLocale());
     }
 
 }

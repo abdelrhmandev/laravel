@@ -1,17 +1,19 @@
 <?php
-
 namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use LaravelLocalization;
+use App\Models\Banner;
 
-class Bannerontroller extends Controller
+
+class BannerController extends Controller
 {
-    public function index()
-    {
-        return view('admin.banners.index');
+    public function index(){ 
+        if (view()->exists('admin.banners.index')) {
+            $banners = Banner::with('banner')->latest()->get(); 
+            return view('admin.banners.index',['banners'=>$banners]);
+        }
     }
-        public function create()
-    {
-        return view('admin.banners.create');
-    }
+
+
 }

@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -261,6 +260,9 @@ class CountrySeeder extends Seeder
         ['title_en'=>'Zimbabwe','title_ar'=>'زيمبابوي','code'=>'ZW']        
        ];
        DB::table('countries')->insert($items);   
- 
+
+       DB::table('countries')->where('id',62)->update(['flag'=>'uploads/flags/eg.svg']);
+       DB::table('countries')->where('id',186)->update(['flag'=>'uploads/flags/sa.svg']);
+
     }
 }

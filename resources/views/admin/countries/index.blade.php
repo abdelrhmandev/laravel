@@ -1,13 +1,4 @@
-<h1>
-  <a target="_new" href="{{ URL::asset('public/flags/eg.svg') }}">Click</a>
-  </h1>
-
-<br/>
-
-{{  public_path() }}
-
- 
-<table cellpading="2" class="d-none">
+ <table>
     <thead>
       <tr>
         <td>#</td>
@@ -18,10 +9,17 @@
     <tbody>
     @forelse ($countries as $country)
     <tr>
-        <td>{{  $country->id }}</td>
+        <td>{{  $country->id }}
+        @if($country->flag)  
+        <img width="80" height="80" src="{{ asset('storage/'.$country->flag) }}">
+        @endif  
+      </td>
+        
         <td>{{  $country->{'title_'.app()->getLocale() } }}</td>
+        
         <td>{{  $country->city->count() }}</td>       
-        <br/>
+
+        <br/><table cellpading="5" cellspacing="15" border="0">
     </tr>
     @empty
         {{  trans('city.no_cities_added') }}

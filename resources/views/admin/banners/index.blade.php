@@ -4,15 +4,24 @@
       <tr>
         <th>#</th>
         <th>Title</th>
-        <th>Category</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
-        @forelse ($recipes as $recipe)        
+        @forelse ($banners as $banner)        
       <tr>
-        <td>{{ $recipe->id }}</td>
-        <td>{{ $recipe->recipe->title }}</td>         
-        <td>{{ ($recipe->recipe_category->category->title) }}</td> 
+        <td>{{ $banner->id }}
+        
+        
+          @if($banner->image)  
+          <img width="80" height="80" src="{{ asset('storage/'.$banner->image) }}">
+          @endif  
+  
+          
+
+        </td>
+        <td>{{ $banner->banner->title }}</td>
+        <td>{{ $banner->banner->description }}</td>         
     </tr>
       @empty
       {{  trans('area.no_aras_added') }}
