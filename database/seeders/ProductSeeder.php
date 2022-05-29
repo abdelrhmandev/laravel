@@ -14,12 +14,12 @@ class ProductSeeder extends Seeder
 
 
        $items = [
-        ['published'=>'1','product_category_id'=>'1','image'=>NULL,'featured'=>'1'],
-        ['published'=>'1','product_category_id'=>'2','image'=>NULL,'featured'=>'1'],
-        ['published'=>'0','product_category_id'=>'3','image'=>NULL,'featured'=>'0'],
-        ['published'=>'1','product_category_id'=>'4','image'=>NULL,'featured'=>'1'],
-        ['published'=>'0','product_category_id'=>NULL,'image'=>NULL,'featured'=>'1'],
-        ['published'=>'0','product_category_id'=>NULL,'image'=>NULL,'featured'=>'0']
+        ['published'=>'1','price'=>'160.65','manage_stock'=>'0','in_stock'=>'1','featured'=>'1'],
+        ['published'=>'1','price'=>'254.66','manage_stock'=>'0','in_stock'=>'1','featured'=>'1'],
+        ['published'=>'0','price'=>'231.33','manage_stock'=>'0','in_stock'=>'1','featured'=>'0'],
+        ['published'=>'1','price'=>'324.20','manage_stock'=>'0','in_stock'=>'1','featured'=>'1'],
+        ['published'=>'0','price'=>'450.20','manage_stock'=>'0','in_stock'=>'1','featured'=>'1'],
+        ['published'=>'0','price'=>'301.36','manage_stock'=>'0','in_stock'=>'1','featured'=>'0']
        ];
        DB::table('products')->insert($items);      
 

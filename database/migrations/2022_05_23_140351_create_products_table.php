@@ -18,6 +18,7 @@ class CreateProductsTable  extends Migration
                 $table->foreignId('brand_id')->nullable()->constrained('brands');
                 $table->string('image',150)->nullable();
                 $table->enum('published', ['0','1'])->default(1);
+                $table->boolean('featured')->default(0);
                 $table->decimal('price', 18, 4)->unsigned();
                 $table->decimal('special_price', 18, 4)->unsigned()->nullable();
                 $table->string('special_price_type')->nullable();

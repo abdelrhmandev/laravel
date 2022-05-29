@@ -18,10 +18,10 @@ Route::resource('slides','SlideController'); // Slides
 
 
 Route::resource('users','UserController');// Users
-// Recipe Project Routes
+////////////////////// Foody Project Routes
 Route::resource('nutritions','NutritionController'); // Nutritions
 Route::resource('recipes','RecipeController'); // Recipes
-Route::resource('recipe-category','RecipeCategoryController'); // Recipe Categories
+Route::resource('recipe-categories','RecipeCategoryController'); // Recipe Categories
 
 
 

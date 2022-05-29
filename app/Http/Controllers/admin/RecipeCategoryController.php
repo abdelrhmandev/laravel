@@ -10,7 +10,7 @@ class RecipeCategoryController extends Controller
 {
     public function index(){ 
         if (view()->exists('admin.recipe_categories.index')) {
-            $recipe_categories = RecipeCategory::with(['category','recipes'])->get(); 
+            $recipe_categories = RecipeCategory::with('category')->latest()->get(); 
             return view('admin.recipe_categories.index',['recipe_categories'=>$recipe_categories]);
         }
     }

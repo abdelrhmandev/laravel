@@ -1,4 +1,4 @@
-<table cellpading="2">
+<table cellpading="2" cellpadding="10">
 
     <thead>
       <tr>
@@ -15,14 +15,14 @@
         <td>{{ $category->category->title }}
    
         </td> 
-        <td>{{ $category->recipes->count() }}</td>
+        <td></td>
 
         <td>           
-          @if($category->image)
-            <img src="{{  Storage::url($category->image) }}" width="50" height="50">
+          @isset($category->image)
+            <img src="{{ Storage::url($category->image) }}" width="50" height="50">
           @else
             Not Available
-          @endif
+          @endisset
         </td>
 
       </tr>

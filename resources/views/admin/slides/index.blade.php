@@ -14,10 +14,7 @@
         
           @if($slide->image)  
           <img width="80" height="80" src="{{ asset('storage/'.$slide->image) }}">
-          @endif  
-
-          
-
+          @endif            
         </td>
 
 

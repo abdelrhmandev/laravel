@@ -14,11 +14,11 @@ class ProductCategorySeeder extends Seeder
 
 
        $items = [
-        ['image'=>'uploads/product_categories/it.jpg','published'=>'1'],
-        ['image'=>'uploads/product_categories/programing.jpg','published'=>'1'],
-        ['image'=>'uploads/product_categories/design.jpg','published'=>'1'],
-        ['image'=>'uploads/product_categories/social-net-work.jpg','published'=>'0'],
-        ['image'=>'uploads/product_categories/security.jpg','published'=>'1'],
+        ['published'=>'1'],
+        ['published'=>'1'],
+        ['published'=>'1'],
+        ['published'=>'0'],
+        ['published'=>'1'],
   
        ];
        DB::table('product_categories')->insert($items);      
