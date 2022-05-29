@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <h1>
   <a target="_new" href="{{ asset('storage/flags/eg.svg') }}">Click</a>
 
@@ -14,9 +13,6 @@
 
  
 <table cellpading="2" class="d-none">
-=======
- <table>
->>>>>>> 16814ef73fae767bb84e0ce715e0392a6e484143
     <thead>
       <tr>
         <td>#</td>
