@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -15,11 +14,11 @@ class PostCategorySeeder extends Seeder
 
 
        $items = [
-        ['image'=>'uploads/it.jpg','published'=>'1'],
-        ['image'=>'uploads/programing.jpg','published'=>'1'],
-        ['image'=>'uploads/it.jpg','published'=>'1'],
-        ['image'=>'uploads/it.jpg','published'=>'0'],
-        ['image'=>'uploads/it.jpg','published'=>'1'],
+        ['image'=>'uploads/post_categories/it.jpg','published'=>'1'],
+        ['image'=>'uploads/post_categories/programing.jpg','published'=>'1'],
+        ['image'=>'uploads/post_categories/design.jpg','published'=>'1'],
+        ['image'=>'uploads/post_categories/social-net-work.jpg','published'=>'0'],
+        ['image'=>'uploads/post_categories/security.jpg','published'=>'1'],
   
        ];
        DB::table('post_categories')->insert($items);      
@@ -40,7 +39,7 @@ class PostCategorySeeder extends Seeder
             ['title'=>'Social Net Work','slug'=>'social-net-work','lang'=>'en','post_category_id'=>'4'],
             ['title'=>'شبكات التواصل الأجتماعي','slug'=>'شبكات-التواصل-الأجتماعي','lang'=>'ar','post_category_id'=>'4'],
 
-            ['title'=>'Security','slug'=>'Security','lang'=>'en','post_category_id'=>'5'],
+            ['title'=>'Security','slug'=>'security','lang'=>'en','post_category_id'=>'5'],
             ['title'=>'امن المعلومات','slug'=>'امن-المعلومات','lang'=>'ar','post_category_id'=>'5'],  
             
        ];

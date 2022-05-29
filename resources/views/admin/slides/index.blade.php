@@ -10,7 +10,17 @@
     <tbody>
         @forelse ($slides as $slide)        
       <tr>
-        <td>{{ $slide->id }}</td>
+        <td>{{ $slide->id }}
+        
+          @if($slide->image)  
+          <img width="80" height="80" src="{{ asset('storage/'.$slide->image) }}">
+          @endif  
+
+          
+
+        </td>
+
+
         <td>{{ $slide->slide->title }}</td>                
         <td>{{ $slide->slide->description }}</td>        
       </tr>

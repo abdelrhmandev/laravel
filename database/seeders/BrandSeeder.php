@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -17,10 +16,11 @@ class BrandSeeder extends Seeder
        $items = [
         ['published'=>'1','image'=>'uploads/brands/adidas.png'],
         ['published'=>'1','image'=>'uploads/brands/nike.png'],
-        ['published'=>'1','image'=>'uploads/brands/kappa.png'],
+        ['published'=>'0','image'=>'uploads/brands/kappa.png'],
         ['published'=>'1','image'=>'uploads/brands/prada.png'],
-        ['published'=>'1','image'=>'uploads/brands/hermes.png'],
-        
+        ['published'=>'0','image'=>'uploads/brands/hermes.png'],
+        ['published'=>'0','image'=>NULL],
+        ['published'=>'1','image'=>NULL],
        ];
        DB::table('brands')->insert($items);      
 
@@ -45,6 +45,11 @@ class BrandSeeder extends Seeder
             ['title'=>'Hermes','slug'=>'hermes','lang'=>'en','brand_id'=>'5'],
             ['title'=>'هيرميس','slug'=>'هيرميس','lang'=>'ar','brand_id'=>'5'],
 
+            ['title'=>'H&M','slug'=>'h-m','lang'=>'en','brand_id'=>'6'],
+            ['title'=>'اتش اند ام','slug'=>'اتش-اند-ام','lang'=>'ar','brand_id'=>'6'],
+
+            ['title'=>'C&CO','slug'=>'c-co','lang'=>'en','brand_id'=>'7'],
+            ['title'=>'سى اند كو','slug'=>'سى-اند-كو','lang'=>'ar','brand_id'=>'7'],
        ];
        DB::table('brand_translations')->insert($translated_items);  
 

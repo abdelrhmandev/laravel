@@ -11,7 +11,6 @@ class BannerTranslation extends Model
     protected $fillable = [
 		'banner_id',
 		'title',
-        'slug',
 		'lang',
 	];
 
