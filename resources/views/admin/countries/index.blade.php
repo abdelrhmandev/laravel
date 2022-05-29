@@ -1,5 +1,10 @@
 <h1>
-  <a target="_new" href="{{ URL::asset('public/flags/eg.svg') }}">Click</a>
+  <a target="_new" href="{{ asset('storage/flags/eg.svg') }}">Click</a>
+
+
+ 
+  
+
   </h1>
 
 <br/>
