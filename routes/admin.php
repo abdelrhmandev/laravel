@@ -1,11 +1,18 @@
 <?php
 // Route
-#Route::get('/recipe/reviews/{id}','ReviewController@index')->name('recipe.reviews'); // Recipe Reviews
+
 Route::get('/', 'DashboardController@index')->name('admin.dashboard');
 
 Route::group(['prefix' => 'profile'], function () {
     Route::get('/', 'ProfileController@index')->name('edit.profile');
     Route::put('update', 'ProfileController@update')->name('update.profile');
+});
+
+Route::group(['prefix' => 'recipes'], function () {
+    Route::get('/reviews/{id}','RecipeController@reviews')->name('recipe.reviews'); // Recipe Reviews
+
+    Route::get('/tags/{id}','RecipeController@index')->name('recipe.sortby.tags'); // 
+
 });
 
 

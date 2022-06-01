@@ -4,24 +4,23 @@
       <tr>
         <th>#</th>
         <th>Title</th>
-        <th>Description</th>
+    
       </tr>
     </thead>
     <tbody>
         @forelse ($banners as $banner)        
       <tr>
-        <td>{{ $banner->id }}
+        <td>{{ $banner->id }}</td>
+        <td>{{ $banner->banner->title }}
         
-        
-          @if($banner->image)  
-          <img width="80" height="80" src="{{ asset('storage/'.$banner->image) }}">
-          @endif  
-  
-          
+          @isset($banner->image)
+          <img src="{{ Storage::url($banner->image) }}" width="50" height="50">
+        @else
+          Not Available
+        @endisset</td>         
 
-        </td>
-        <td>{{ $banner->banner->title }}</td>
-        <td>{{ $banner->banner->description }}</td>         
+
+   
     </tr>
       @empty
       {{  trans('area.no_aras_added') }}

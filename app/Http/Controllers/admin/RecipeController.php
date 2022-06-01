@@ -4,14 +4,18 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use LaravelLocalization;
 use App\Models\Recipe;
-use App\Models\RecipeCategory;
+ 
 
 
 class RecipeController extends Controller
 {
-    public function index(){ 
+    public function index(Request $request){ 
+
+
+        echo $request->tag_id;
+
         if (view()->exists('admin.recipes.index')) {
-            $recipes = Recipe::with('recipe','recipe_category.category')->latest()->get(); 
+            $recipes = Recipe::with(['recipe','recipe_category','tags'])->withCount('likes','dislikes','reviews')->latest()->get(); 
             return view('admin.recipes.index',['recipes'=>$recipes]);
         }
     }
@@ -23,6 +27,12 @@ class RecipeController extends Controller
      public function edit(){
         if (view()->exists('admin.recipes.index')) {
             return view('admin.recipes.edit');
+        }
+    }
+
+    public function reviews(){
+        if (view()->exists('admin.recipes.reviews.index')) {
+            return view('admin.recipes.reviews.index');
         }
     }
 

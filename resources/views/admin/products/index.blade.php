@@ -32,25 +32,25 @@
         <td>{{ ($recipe->recipe_category->category->title ?? '-') }}</td>
 
         <td>
-          {{ $recipe->likes_count }}  
+          {{ $recipe->likes->count() }}  
         </td>
 
         <td>
-          {{ $recipe->dislikes_count }}  
+          {{ $recipe->dislikes->count() }}  
         </td>
 
 
       <td>
       @forelse ($recipe->tags as $tag)
-      <a href="{{  route('recipe.sortby.tags',$tag->id) }}" class="btn btn-primary">{{$tag->tag->title }}</a>
+      <a href="#" class="btn btn-primary">{{$tag->tag->title }}</a>
       @empty
       - 
       @endforelse
   
         </td>
         <td>
-          @if($recipe->reviews_count)
-          <a href="{{  route('recipe.reviews',$recipe->id) }}">{{ $recipe->reviews_count }}</a>
+          @if($recipe->reviews->count())
+          <a href="{{  route('recipe.reviews',[$recipe->id]) }}">{{ $recipe->reviews->count() }}</a>
           @else
           -
           @endif

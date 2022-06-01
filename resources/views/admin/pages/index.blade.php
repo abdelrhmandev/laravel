@@ -8,13 +8,13 @@
       </tr>
     </thead>
     <tbody>
-        @forelse ($brands as $brand)        
+        @forelse ($pages as $page)        
       <tr>
-        <td>{{ $brand->id }}</td>
-        <td>{{ $brand->brand->title }}
+        <td>{{ $page->id }}</td>
+        <td>{{ $page->page->title }}
         
-          @isset($brand->image)
-          <img src="{{ Storage::url($brand->image) }}" width="50" height="50">
+          @isset($page->image)
+          <img src="{{ Storage::url($page->image) }}" width="50" height="50">
         @else
           Not Available
         @endisset</td>         
