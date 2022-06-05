@@ -19,24 +19,28 @@
         @forelse ($recipes as $recipe)        
       <tr>
         <td>{{ $recipe->id }}
-        <img src="{{ asset('/storage/'.$recipe->image ) }} " width="30" height="30">
+        {{-- <img src="{{ asset('/storage/'.$recipe->image ) }} " width="30" height="30"> --}}
         </td>
-        <td>{{ $recipe->recipe->title }}</td>         
+        <td>
+          {{-- {{ $recipe->recipe->title }} --}}
+        </td>         
  
 
-        <td>{{ $recipe->cook ?? '-' }}</td>
+        <td>
+          {{-- {{ $recipe->cook ?? '-' }} --}}
+        </td>
 
         <td>{{ $recipe->servings ?? '-' }}</td>
 
 
-        <td>{{ ($recipe->recipe_category->category->title ?? '-') }}</td>
+        {{-- <td>{{ ($recipe->recipe_category->category->title ?? '-') }}</td> --}}
 
         <td>
-          {{ $recipe->likes_count }}  
+          {{-- {{ $recipe->likes_count }}   --}}
         </td>
 
         <td>
-          {{ $recipe->dislikes_count }}  
+          {{-- {{ $recipe->dislikes_count }}   --}}
         </td>
 
 
@@ -49,11 +53,11 @@
   
         </td>
         <td>
-          @if($recipe->reviews_count)
+          {{-- @if($recipe->reviews_count)
           <a href="{{  route('recipe.reviews',$recipe->id) }}">{{ $recipe->reviews_count }}</a>
           @else
           -
-          @endif
+          @endif --}}
         </td>
 
        

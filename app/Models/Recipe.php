@@ -30,12 +30,16 @@ class Recipe extends Model
     public function reviews(){
         return $this->hasMany(RecipeReview::class);
     }
+    
     public function tags(){
-    return $this->belongsToMany('App\Models\Tag', 'recipe_tag', 'recipe_id', 'tag_id');
+    return $this->belongsToMany(Tag::class, 'recipe_tag', 'recipe_id', 'tag_id')->withPivot('tag_id')->using('recipe_tag')->as('recipe_tag');
     }
+
+    
+
     
     public function users_likes(){
-        return $this->belongsToMany('App\Models\User', 'recipe_likes', 'recipe_id', 'user_id');
+        return $this->belongsToMany(User::class, 'recipe_likes', 'recipe_id', 'user_id');
         }
 
 }

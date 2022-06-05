@@ -15,10 +15,11 @@ class RecipeController extends Controller
         echo $request->tag_id;
 
         if (view()->exists('admin.recipes.index')) {
-            $recipes = Recipe::with(['recipe','recipe_category.category'])->withCount('likes','dislikes','reviews')->latest()->get(); 
+            $recipes = Recipe::with(['tags.recipe_tag'])->withCount('likes','dislikes','reviews')->latest()->get(); 
 
 
             
+            // $recipes = Recipe::with(['recipe','recipe_category.category'])->withCount('likes','dislikes','reviews')->latest()->get(); 
 
             // $posts = Post::whereHas('comments', function (Builder $query) {
             //     $query->where('content', 'like', 'code%');
