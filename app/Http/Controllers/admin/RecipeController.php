@@ -12,11 +12,13 @@ class RecipeController extends Controller
     public function index(Request $request){ 
 
 
-        echo $request->tag_id;
+      
 
         if (view()->exists('admin.recipes.index')) {
-            $recipes = Recipe::with(['tags.recipe_tag'])->withCount('likes','dislikes','reviews')->latest()->get(); 
+            $recipes = Recipe::with(['tags'])->get(); 
 
+
+ 
 
             
             // $recipes = Recipe::with(['recipe','recipe_category.category'])->withCount('likes','dislikes','reviews')->latest()->get(); 

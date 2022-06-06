@@ -32,7 +32,9 @@ class Recipe extends Model
     }
     
     public function tags(){
-    return $this->belongsToMany(Tag::class, 'recipe_tag', 'recipe_id', 'tag_id')->withPivot('tag_id')->using('recipe_tag')->as('recipe_tag');
+
+        return $this->belongsToMany(Tag::class, 'recipe_tag', 'recipe_id', 'tag_id')->withPivot('tag_id');
+
     }
 
     

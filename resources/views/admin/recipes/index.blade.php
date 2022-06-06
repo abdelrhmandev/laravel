@@ -3,15 +3,15 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Title</th>
-        <th>cook[minutes]</th>
-        <th>servings[persons]</th>
-        <th>Category</th>
-        <th>Likes</th>
-        <th>Dislikes</th>
+        {{-- <th>Title</th> --}}
+        {{-- <th>cook[minutes]</th> --}}
+        {{-- <th>servings[persons]</th> --}}
+        {{-- <th>Category</th> --}}
+        {{-- <th>Likes</th> --}}
+        {{-- <th>Dislikes</th> --}}
         <th>Tags</th>
-        <th>Review</th>
-        <th>Actions</th>
+        {{-- <th>Review</th>
+        <th>Actions</th> --}}
         {{-- <th>Users has Reviewed</th> --}}
       </tr>
     </thead>
@@ -30,7 +30,7 @@
           {{-- {{ $recipe->cook ?? '-' }} --}}
         </td>
 
-        <td>{{ $recipe->servings ?? '-' }}</td>
+        {{-- <td>{{ $recipe->servings ?? '-' }}</td> --}}
 
 
         {{-- <td>{{ ($recipe->recipe_category->category->title ?? '-') }}</td> --}}
