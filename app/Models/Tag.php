@@ -13,14 +13,4 @@ class Tag extends Model
         return $this->hasOne(TagTranslation::class)->where('lang',app()->getLocale());
     }
 
-    public function recipes(){
-    return $this->belongsToMany('App\Models\Tag', 'recipe_tag', 'tag_id', 'recipe_id');
-    }    
-    
-
-    public function posts(){
-        return $this->belongsToMany('App\Models\Tag', 'post_tag', 'tag_id', 'post_id');
-        }    
-
-
 }

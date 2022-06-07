@@ -5,6 +5,8 @@ class Recipe extends Model
 {
     protected $table = 'recipes';
 
+    
+
     protected $fillable = [
 		'recipe_category_id',
 	];
@@ -32,7 +34,6 @@ class Recipe extends Model
     }
     
     public function tags(){
-
         return $this->belongsToMany(Tag::class, 'recipe_tag', 'recipe_id', 'tag_id')->withPivot('tag_id');
 
     }

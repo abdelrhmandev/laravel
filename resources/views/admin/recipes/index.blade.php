@@ -3,15 +3,15 @@
     <thead>
       <tr>
         <th>#</th>
-        {{-- <th>Title</th> --}}
-        {{-- <th>cook[minutes]</th> --}}
-        {{-- <th>servings[persons]</th> --}}
-        {{-- <th>Category</th> --}}
-        {{-- <th>Likes</th> --}}
-        {{-- <th>Dislikes</th> --}}
+        <th>Title</th>
+        <th>cook[minutes]</th>
+        <th>servings[persons]</th>
+        <th>Category</th>
+        <th>Likes</th>
+        <th>Dislikes</th>
         <th>Tags</th>
-        {{-- <th>Review</th>
-        <th>Actions</th> --}}
+        <th>Review</th>
+        <th>Actions</th>
         {{-- <th>Users has Reviewed</th> --}}
       </tr>
     </thead>
@@ -19,28 +19,28 @@
         @forelse ($recipes as $recipe)        
       <tr>
         <td>{{ $recipe->id }}
-        {{-- <img src="{{ asset('/storage/'.$recipe->image ) }} " width="30" height="30"> --}}
+        <img src="{{ asset('/storage/'.$recipe->image ) }} " width="30" height="30">
         </td>
         <td>
-          {{-- {{ $recipe->recipe->title }} --}}
+          {{ $recipe->recipe->title }}
         </td>         
  
 
         <td>
-          {{-- {{ $recipe->cook ?? '-' }} --}}
+          {{ $recipe->cook ?? '-' }}
         </td>
 
-        {{-- <td>{{ $recipe->servings ?? '-' }}</td> --}}
+        <td>{{ $recipe->servings ?? '-' }}</td>
 
 
-        {{-- <td>{{ ($recipe->recipe_category->category->title ?? '-') }}</td> --}}
+        <td>{{ ($recipe->recipe_category->category->title ?? '-') }}</td>
 
         <td>
-          {{-- {{ $recipe->likes_count }}   --}}
+          {{ $recipe->likes_count ?? '-' }}  
         </td>
 
         <td>
-          {{-- {{ $recipe->dislikes_count }}   --}}
+          {{ $recipe->dislikes_count ?? '-'}}  
         </td>
 
 
@@ -53,21 +53,15 @@
   
         </td>
         <td>
-          {{-- @if($recipe->reviews_count)
+          @if($recipe->reviews_count)
           <a href="{{  route('recipe.reviews',$recipe->id) }}">{{ $recipe->reviews_count }}</a>
           @else
           -
-          @endif --}}
+          @endif
         </td>
 
        
-        <td>
-          {{-- @foreach ($recipe->users_likes as $user)
-          <a href="#">{{ $user->name  }}</a>
-          @endforeach --}}
-          
-        </td>
-
+ 
 <td>
           <a href="{{ route('recipes.edit',[$recipe->id]) }}">Edit </a>
 </td>

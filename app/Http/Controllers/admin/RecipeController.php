@@ -15,13 +15,13 @@ class RecipeController extends Controller
       
 
         if (view()->exists('admin.recipes.index')) {
-            $recipes = Recipe::with(['tags'])->get(); 
+          
 
 
  
 
             
-            // $recipes = Recipe::with(['recipe','recipe_category.category'])->withCount('likes','dislikes','reviews')->latest()->get(); 
+            $recipes = Recipe::with(['recipe','recipe_category.category','tags.tag'])->withCount('likes','dislikes','reviews')->latest()->get(); 
 
             // $posts = Post::whereHas('comments', function (Builder $query) {
             //     $query->where('content', 'like', 'code%');
@@ -46,6 +46,12 @@ class RecipeController extends Controller
      public function edit(){
         if (view()->exists('admin.recipes.index')) {
             return view('admin.recipes.edit');
+
+            // طريقه كتابه جديده
+            // return view('question-list', [
+            //     'questions' => Question::with('source', 'type')->paginate(100)
+            // ]);
+
         }
     }
 
