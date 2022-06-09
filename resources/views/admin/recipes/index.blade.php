@@ -25,7 +25,7 @@
           {{ $recipe->recipe->title }}
         </td>         
  
-
+{{-- 
         <td>
           {{ $recipe->cook ?? '-' }}
         </td>
@@ -64,7 +64,7 @@
  
 <td>
           <a href="{{ route('recipes.edit',[$recipe->id]) }}">Edit </a>
-</td>
+</td> --}}
     </tr>
       @empty
       {{  trans('area.no_aras_added') }}

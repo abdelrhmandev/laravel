@@ -16,12 +16,25 @@ class RecipeController extends Controller
 
         if (view()->exists('admin.recipes.index')) {
           
-
-
+//https://omarbarbosa.com/posts/optimization-of-eloquent-queries-to-reduce-memory-usage
+# Right
+            // $posts = Post::with([
+            //     'tags' => function($query) {
+            //         $query->select('id', 'name'); # Many to many
+            //     }, 
+            //     'images' => function($query) {
+            //         $query->select('id', 'url', 'post_id'); # One to many
+            //     }, 
+            //     'user' => function($query) {
+            //         $query->select('id', 'name'); # One to many
+            //     }
+            // ])
+            // ->get(['id', 'title', 'content', 'user_id']);
  
+            $recipes = Recipe::with(['recipe'])->get(); 
 
             
-            $recipes = Recipe::with(['recipe','recipe_category.category','tags.tag'])->withCount('likes','dislikes','reviews')->latest()->get(); 
+            // $recipes = Recipe::with(['recipe','recipe_category.category','tags.tag'])->withCount('likes','dislikes','reviews')->latest()->get(); 
 
             // $posts = Post::whereHas('comments', function (Builder $query) {
             //     $query->where('content', 'like', 'code%');

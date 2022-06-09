@@ -5,7 +5,10 @@ class Recipe extends Model
 {
     protected $table = 'recipes';
 
-    
+    protected $with = [
+        'recipe',
+      
+    ];
 
     protected $fillable = [
 		'recipe_category_id',
