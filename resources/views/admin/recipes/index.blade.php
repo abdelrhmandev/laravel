@@ -22,13 +22,11 @@
         <img src="{{ asset('/storage/'.$recipe->image ) }} " width="30" height="30">
         </td>
         <td>
-          {{ $recipe->recipe->title }}
+          {{-- {{ $recipe->recipe->title }} --}}
         </td>         
  
-{{-- 
-        <td>
-          {{ $recipe->cook ?? '-' }}
-        </td>
+
+        {{-- 
 
         <td>{{ $recipe->servings ?? '-' }}</td>
 

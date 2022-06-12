@@ -31,7 +31,7 @@ class RecipeController extends Controller
             // ])
             // ->get(['id', 'title', 'content', 'user_id']);
  
-            $recipes = Recipe::with(['recipe'])->get(); 
+            $recipes = Recipe::select('id','image')->get(); 
 
             
             // $recipes = Recipe::with(['recipe','recipe_category.category','tags.tag'])->withCount('likes','dislikes','reviews')->latest()->get(); 
